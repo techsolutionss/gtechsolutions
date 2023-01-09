@@ -1,0 +1,81 @@
+.modal-container{
+    width: 500px;
+    height: 250px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    background-color: whitesmoke;
+    z-index: 4;
+    text-align: center;
+    transition: transform .3s;
+}
+.open-modal{
+    transform: translate(-50%,-50%) scale(1);
+}
+.modal-header{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-2);
+}
+
+.circle{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid white;
+    border-radius: 50%;
+}
+.modal-header-icon{
+    font-size: 45px;
+    color: white;
+}
+.modal-body{
+    padding-top: 20px;
+}
+.modal-body h2{
+    text-transform: capitalize;
+}
+.modal-body p{
+    color: var(--color-1);
+}
+.modal-body button{
+    display: inline;
+    width: 190px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    background-color: var(--color-2);
+    cursor: pointer;
+}
+.modal-body button:hover{
+    opacity: .9;
+}
+
+/* value box styling */
+.value-box-container{
+    width: 270px;
+    height: 240px;
+    background: white;
+    padding: 20px 20px;
+    text-align: center;
+    
+}
+.value-box-container h2{
+    text-transform: capitalize;
+    color: var(--color-4);
+
+}
+.value-box-container p{
+    margin-top: 35px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--color-1);
+}

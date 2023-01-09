@@ -1,0 +1,131 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    padding-left:60px;
+    padding-right: 40px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+}
+.navbar-header{
+    color: var(--color-1);
+    font-size: 30px;
+}
+.navbar-header span{
+    color: var(--color-4);
+}
+.navbar-nav ul{
+    list-style: none;
+}
+.navbar-nav ul li{
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    margin-left: 15px;
+    height: 35px;
+    position: relative;
+}
+
+.navbar-nav ul li::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 8%;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-1);
+    transition: all .7s;
+}
+.navbar-nav ul li:hover::before{
+    width: 90%;
+}
+.navbar-list-link{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: var(--color-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 17px;
+    transition: color .2s;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.navbar-list-link:hover{
+    color: var(--color-1);
+}
+.navbar-icon{
+    display: none;
+}
+
+@media screen and (max-width:600px) {
+    .navbar{
+        z-index: 3;
+        padding-left: 40px;
+    }
+    .navbar-nav{
+        position: fixed;
+        top: 10%;
+        right: 0;
+        width: 55%;
+        height: 100%;
+        padding-top: 20px;
+        transition: all .6s;
+        padding-right: 10px;
+        background-color: white;
+    }
+    .collapse{
+        position: fixed;
+        top: 10%;
+        right: -250px;
+        width: 50%;
+        height: 100%;
+        padding-top: 20px;
+        transition: all .6s;
+        background-color: white;
+    }
+    .navbar-icon{
+        display: block;
+        font-size: 30px;
+        color: var(--color-1);
+        z-index: 3;
+    }
+    .navbar-nav ul li::before{
+        width: 0;
+        height: 0;
+    }
+    .navbar-nav ul li{
+        width: 100%;
+        height: 60px;
+        display: block;
+        margin: 0;
+        margin-left: 6px;
+        border-bottom: 1px solid var(--color-2);
+        
+    }
+    .navbar-nav ul li:hover{
+        background-color: var(--color-2);
+        border-bottom: none;
+    }
+    .navbar-nav ul li:hover .navbar-list-link{
+        color: white;
+    }
+    .navbar-list-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-1);
+    }
+}

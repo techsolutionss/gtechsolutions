@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.about-container{
+    width: 100%;
+    min-height: 90vh;
+    background-color: whitesmoke;
+}
+.about-container-min-1{
+    width: 100%;
+    min-height: 60vh;
+    background-color: var(--color-1);
+}
