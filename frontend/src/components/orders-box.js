@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "../static/order.css"
-import { publicRequest,headers } from "../utility/fetchcalls";
+import { publicRequest,headers } from "../utility/apicalls";
 import Modal from "./modal";
 
 const OrderForm =()=>{
@@ -36,7 +36,7 @@ const OrderForm =()=>{
     useEffect(()=>{
         const fetchData = async()=>{
             try {
-                const {data} = await publicRequest.get("/services")
+                const {data} = await publicRequest.get("/api/services")
                 setcategorys(data)
             } catch (error) {
                 console.error(error.message)
@@ -157,7 +157,7 @@ const OrderForm =()=>{
                         ref={locationRef}
                         onChange={(e)=> setlocation(e.target.value)}
                         >
-                            <option value=""></option>
+                            <option value="">select your country</option>
                             <option value="america">america</option>
                             <option value="japan">japan</option>
                             <option value="europe">europe</option>

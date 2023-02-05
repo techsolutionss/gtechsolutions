@@ -79,3 +79,10 @@
     font-size: 15px;
     color: var(--color-1);
 }
+
+@media screen and (max-width:600px){
+    .value-box-container{
+        width: 370px;
+        height: 210px;    
+    }
+}

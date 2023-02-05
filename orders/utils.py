@@ -1,7 +1,7 @@
 import phonenumbers
 import datetime
 import random
-
+from backend.settings import env
 
 
 def validate_phone(phone):
@@ -31,4 +31,6 @@ def generate_id():
         count += 1
 
     return generated_id
+
+
 

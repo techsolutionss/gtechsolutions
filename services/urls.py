@@ -1,7 +1,7 @@
 # urls are configured here
-from django.conf.urls import url
+from django.urls import path
 from services.views import service_api
 
 urlpatterns = [
-    url('services/',service_api )
+    path('services/',service_api )
 ]

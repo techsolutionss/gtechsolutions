@@ -18,11 +18,32 @@
     z-index: 5;
 }
 .navbar-header{
-    color: var(--color-1);
+    color: var(--color-2);
     font-size: 30px;
 }
 .navbar-header span{
-    color: var(--color-4);
+    color: slategray;
+}
+.navbar-nav{
+    display: flex;
+}
+
+.navbar-link{
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    margin-left: 15px;
+    height: 35px;
+    font-size: 20px;
+    color: slategray;
+    text-transform: capitalize;
+    text-decoration: none;
+    border: 1px solid var(--color-2);
+}
+.navbar-link:hover{
+    background: var(--color-2);
+    color: white;
+    border: none;
 }
 .navbar-nav ul{
     list-style: none;
@@ -35,7 +56,29 @@
     height: 35px;
     position: relative;
 }
-
+.sign-in-link{
+    position: relative;
+}
+.sign-in-link-text{
+    position: absolute;
+    margin-top: 15px;
+    background-color: aliceblue;
+    min-width: 170px;
+    font-size: 14px;
+    display: block;
+    background-color: slategray;
+    text-transform: lowercase;
+    transition: all 2s;
+}
+.hide-text{
+    position: absolute;
+    margin-top: 15px;
+    background-color: aliceblue;
+    min-width: 170px;
+    font-size: 15px;
+    display: none;
+    transition: all 2s;
+}
 .navbar-nav ul li::before{
     content: "";
     position: absolute;
@@ -43,7 +86,7 @@
     height: 8%;
     bottom: 0;
     left: 0;
-    background-color: var(--color-1);
+    background-color: var(--color-2);
     transition: all .7s;
 }
 .navbar-nav ul li:hover::before{
@@ -53,7 +96,7 @@
     display: inline-block;
     width: 100%;
     height: 100%;
-    color: var(--color-2);
+    color: slategray;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,7 +107,7 @@
     text-transform: capitalize;
 }
 .navbar-list-link:hover{
-    color: var(--color-1);
+    color: var(--color-2);
 }
 .navbar-icon{
     display: none;
@@ -77,7 +120,7 @@
     }
     .navbar-nav{
         position: fixed;
-        top: 10%;
+        top: 9.5%;
         right: 0;
         width: 55%;
         height: 100%;
@@ -85,10 +128,11 @@
         transition: all .6s;
         padding-right: 10px;
         background-color: white;
+        display: block;
     }
     .collapse{
         position: fixed;
-        top: 10%;
+        top: 9.5%;
         right: -250px;
         width: 50%;
         height: 100%;
@@ -126,6 +170,23 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-1);
+        color: slategray;
+    }
+    .navbar-links{
+        margin-top: 60px;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar-link{
+        display: block;
+        height: 50px;
+        width: 100%;
+        padding: 10px;
+        
+    }
+    .sign-in-link-text{
+        display: none;
     }
 }

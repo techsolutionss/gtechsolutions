@@ -2,7 +2,7 @@
 export const values = [
     {
         "title":"efficiency",
-        "text":"channeling our resources to utilizing minimal resources to produce intended result to better server our customers and enable them fun ction competetively"
+        "text":"channeling our resources to utilizing minimal resources to produce intended result to better server our customers and enable them function competetively"
     },
     {
         "title":"affordability",

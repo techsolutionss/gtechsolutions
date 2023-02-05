@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,9 +29,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR,".env"))
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,9 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'services',
-    'emailing',
-    'orders',
+    # 'rest_framework.authtoken',
+    'services.apps.ServicesConfig',
+    'emailing.apps.EmailingConfig',
+    'orders.apps.OrdersConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +65,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'template'),os.path.join(BASE_DIR,'frontend/public')],
+        'DIRS': [os.path.join(BASE_DIR,'template'),os.path.join(BASE_DIR,'frontend/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# passwords hashers
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -128,7 +134,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR,"static"),os.path.join(BASE_DIR,"frontend")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,"static"),os.path.join(BASE_DIR,"frontend","build","static")]
 
 #media files configurations 
 MEDIA_URL = '/media/'
@@ -136,8 +142,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'mediafiles')
 
 
 # email configurations
-ADMINS = [('austine','austinejoseph@gmail.com')]
-MANAGERS = ''
+ADMINS = [('austine','austinejoseph@gmail.com'),('gabriel','aulegabriel381@gmail.com')]
+MANAGERS = ADMINS
 SERVER_EMAIL = ''
 DEFAULT_FROM_EMAIL = ''
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -149,7 +155,8 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 # cors configuration
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000',]
+# CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:8000',]
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -157,5 +164,11 @@ CORS_ORIGIN_WHITELIST = ['http://localhost:3000',]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK ={
-    
+    # 'DEFAULT_AUTHENTICATION_CLASSES':(
+    #     'rest_framework.authentication.TokenAuthentication',
+    #     'rest_framework.authentication.SessionAuthentication',
+    # )
 }
+
+ADMIN_URL = env('ADMIN_URL')
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']

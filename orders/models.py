@@ -26,7 +26,7 @@ class Order(models.Model):
 
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
-    order_reference = models.CharField(max_length=50,default=generate_id)
+    order_reference = models.CharField(max_length=50,blank=True)
     order_title = models.CharField(max_length = 30,choices=ORDER_CHOICES)
     phone_no = models.CharField(max_length=11)
     email = models.EmailField()
@@ -37,6 +37,10 @@ class Order(models.Model):
     
     def __str__(self):
         return self.firstname
-
+    
+    def save(self,*args,**kwargs):
+        if not self.order_reference:
+            self.order_reference = generate_id()
+        super(Order,self).save(*args,**kwargs)
     class Meta:
         ordering = ["order_date"]

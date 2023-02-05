@@ -1,16 +1,15 @@
 from django.shortcuts import render
-from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import (send_mail, BadHeaderError,EmailMessage,get_connection)
 from .serializers import MailSerializers
 
 # Create your views here.
 class Recievemail(APIView):
     def post(self,request):
         # parse the incoming data to json format
-        mail_data = JSONParser().parse(request)
+        mail_data = request.data
         mail_serializer = MailSerializers(data = mail_data)
         if mail_serializer.is_valid():
             # if data is valid collect email data to be sent
@@ -32,7 +31,7 @@ class Recievemail(APIView):
                 return Response("email sending failed")
         
             
-        return Response(mail_serializer.errors)
+        return Response(mail_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
         
         
         

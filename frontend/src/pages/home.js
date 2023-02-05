@@ -4,6 +4,9 @@ import ValueBox from "../components/value-box";
 import { Link } from "react-router-dom";
 import { values } from "../utility/datas";
 import { useState } from "react";
+import Services from "./services";
+import CommentSection from "./commentssection";
+import Footer from "../components/footer";
 
 
 const Home = ()=>{
@@ -22,13 +25,12 @@ const Home = ()=>{
                             provident cum necessitatibus molestiae hic eveniet aliquam?
                         </p>
                         <div className="home-column-1-links-container">
-                            <Link className="home-link" to="#">Get in touch</Link>
+                            <Link className="home-link" to="/contact">Get in touch</Link>
                             <Link className="home-link" to="/order">Hire us today</Link>
                         </div>
                     </div>
                 </div>
-                <div className="home-column-2">
-                    <div className="home-column-2-1">
+                <div className="home-column-2-1">
                         <h2 className="home-column-2-1-header">The values we live by</h2>
                         <div className="home-column-2-1-boxes">
                             {
@@ -40,8 +42,10 @@ const Home = ()=>{
                             }
                             
                         </div>
-                    </div>
                 </div>
+                <Services/>
+                <CommentSection/>
+                <Footer/>
             </div>
         </>
         

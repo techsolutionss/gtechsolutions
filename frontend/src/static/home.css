@@ -1,9 +1,11 @@
 :root{
     --color-1: #04040f;
     --color-6: rgb(9, 236, 149);
-    --color-2: rgb(12, 204, 130);
+    /* --color-2: rgb(12, 204, 130); */
     --color-3: #87cefa;
-    --color-4: #4169e1;
+    --color-4: #09e0bd;
+    --color-2: #09e0bd;
+    /* --color-2: #e0096d; */
 }
 *{
     padding: 0;
@@ -12,24 +14,26 @@
 }
 .home-container{
     width: 100%;
-    height: 90.5vh;
+    min-height: 90.5vh;
 }
 .home-column-1{
     width: 100%;
-    height: 80vh;
-    background-image:linear-gradient(rgba(86,86,86,.6),rgba(86,86,86,.6),rgba(86,86,86,.6)),url("../assets/images/confident-business.jpg") ;
+    height: 90vh;
+    background-image:linear-gradient(rgba(86,86,86,.6),rgba(86,86,86,.6),rgba(86,86,86,.6)),url("../assets/images/blue-shirt-man.jpg") ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
     padding: 0 60px;
 }
 .home-column-1-1{
     width: 60%;
     height: 100%;
+    padding-top: 60px;
 }
 .home-column-1-header{
     font-size: 40px;
     font-weight: 400;
-    padding-top: 40px;
+    padding-top: 60px;
     color: white;
 }
 .home-column-1-p{
@@ -41,11 +45,11 @@
 }
 .home-column-1-links-container{
     width: 60%;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .home-link{
     display: inline-block;
-    width: 190px;
+    width: 200px;
     padding: 10px 0;
     text-align: center;
     text-decoration: none;
@@ -57,20 +61,19 @@
     margin-left: 30px;
 }
 .home-link:hover{
-    background-color: var(--color-4);
+    background-color: slategray;
 }
-.home-column-2{
+/* .home-column-2{
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     padding: 0 60px;
-    background: white;
-}
-.home-column-2-1{
-    padding: 20px;
-    width: 100%;
-    height: 120%;
     background: whitesmoke;
-    transform: translateY(-70px);
+} */
+.home-column-2-1{
+    padding: 40px 60px;
+    width: 100%;
+    min-height: 70vh;
+    background: whitesmoke;
 }
 .home-column-2-1-header{
     text-align: center;
@@ -79,7 +82,7 @@
     color: var(--color-4);
 }
 .home-column-2-1-boxes{
-    margin-top: 40px;
+    margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -102,9 +105,8 @@
         color: white;
     }
     .home-column-2-1{
-        transform: translateY(0);
         flex-wrap: wrap;
-        min-height: 70vh;
+        min-height: 90vh;
 
     }
     .home-column-2{

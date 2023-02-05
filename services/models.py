@@ -14,3 +14,6 @@ class Service(models.Model):
 class ProjectsUpload(models.Model):
     file_name = models.CharField(max_length=50)
     img_url = models.ImageField(upload_to=upload_to)
+
+    def __str__(self):
+        return self.file_name

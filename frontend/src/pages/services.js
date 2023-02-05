@@ -1,22 +1,20 @@
 import "../static/services.css"
-import Navbar from "../components/navbar";
-import Footer from "../components/footer"
 import ServiceBox from "../components/service-box";
 import { useEffect, useState } from "react";
-import { publicRequest } from "../utility/fetchcalls";
+import { publicRequest } from "../utility/apicalls";
 const Services = ()=>{
     const[services,setservices] = useState([])
 
     useEffect(()=>{
         const fetchServices = async()=>{
             try {
-                const{data,status} = await publicRequest.get("/services")
+                const{data,status} = await publicRequest.get("/api/services")
                 if(status === 200){
                     setservices(data)
                 }
                     
             } catch (error) {
-                console.log(error.message)
+                console.log(error.response)
             };
             
         }
@@ -25,9 +23,7 @@ const Services = ()=>{
 
     return(
         <>
-            <Navbar/>
             <div className="service-container">
-                
                 <div className="service-min-container-1">
                     <h2 className="service-min-container-1-header">
                         At <span className="tech-name">Techsolution</span> our passion is your success
@@ -52,10 +48,9 @@ const Services = ()=>{
                     }
                     </div>
                 </div>
-                <div className="service-min-container-3">
+                {/* <div className="service-min-container-3">
                     <h2>Reach out to us through our social media handles</h2>
-                    <Footer/>
-                </div>
+                </div> */}
             </div>
         </>
     );

@@ -116,16 +116,13 @@
 .order-container-main{
     width: 100%;
     height: 100vh;
-    background: url("../assets/images/home-background.jpg");
-    background-position: center;
-    background-size: cover;
-    background: var(--color-4);
+    background-color: whitesmoke;
 }
 .order-container-main-header{
     text-align: center;
     font-size: 30px;
     font-weight: 400;
-    color: white;
+    color: slategray;
     padding-top: 30px;
 }
 

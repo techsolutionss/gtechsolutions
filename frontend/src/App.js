@@ -3,8 +3,9 @@ import Contact from "./pages/contact"
 import About from "./pages/about"
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import './App.css';
-import Services from "./pages/services";
 import Order from "./pages/order";
+import SignUp from "./pages/signup";
+
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route  path="/contact" element={<Contact/>}/>
-            <Route  path="/services" element={<Services/>}/>
             <Route  path="/about" element={<About/>}/>
             <Route  path="/order" element={<Order/>}/>
+            <Route  path="/signup" element={<SignUp/>}/>
           </Routes>        
       </Router>
   );

@@ -10,16 +10,16 @@
     padding: 0 40px;
     width: 100%;
     height: 90.5vh;
-    background-image: linear-gradient(rgba(86, 86, 86,0.6),rgba(86, 86, 86,0.6),rgba(86, 86, 86,0.6)),url("../assets/images/contact-background.jpg");
+    /* background-image: linear-gradient(rgba(86, 86, 86,0.6),rgba(86, 86, 86,0.6),rgba(86, 86, 86,0.6)),url("../assets/images/contact-background.jpg");
     background-position: center;
-    background-size: cover;
-    
+    background-size: contain; */
+    background-color: whitesmoke;
 }
 .contact-header{
     text-align: center;
     text-transform: capitalize;
     font-size: 30px;
-    color: white;
+    color: slategray;
 }
 .contact-form-container{
     padding: 10px 0;
@@ -125,7 +125,7 @@
     transition: all .3s;
 }
 .btn-container button:hover{
-    background-color: var(--color-4);
+    background-color: slategray;
     color: white;
 }
 .contact-footer{

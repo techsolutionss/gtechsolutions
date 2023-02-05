@@ -1,6 +1,6 @@
-from django.conf.urls import url
+from django.urls import path
 from emailing.views import Recievemail
 
 urlpatterns = [
-    url('mailing/', Recievemail.as_view(), name='recieve_mail')
+    path('mailing/', Recievemail.as_view(), name='recieve_mail')
 ]

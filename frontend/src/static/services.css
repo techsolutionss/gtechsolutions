@@ -12,9 +12,10 @@
 .service-min-container-1{
     width: 100%;
     min-height: 25vh;
-    background-image:linear-gradient(rgba(86, 86, 86,0.5),rgba(86, 86, 86,0.5),rgba(86, 86,86,0.5)),url("../assets/images/hand-shake-background.jpg");
+    background-image:linear-gradient(rgba(86, 86, 86,0.4),rgba(86, 86, 86,0.4),rgba(86, 86,86,0.4)),url("../assets/images/smiling-white-guy.jpg");
+    background-size: 100% 100%;
     background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
     padding: 90px 40px;
     
@@ -25,7 +26,7 @@
     color: white;
 }
 .tech-name{
-    color: var(--color-1);
+    color: slategray;
 }
 .service-min-container-1 p{
     margin-top: 30px;
@@ -33,7 +34,7 @@
     color: whitesmoke;
 }
 .percent{
-    color: var(--color-2);
+    color: slategray;
     font-weight: bold;
 }
 .service-min-container-1 button{
@@ -49,7 +50,7 @@
     background-color: white;
 }
 .service-min-container-1 button:hover{
-    background-color: var(--color-1);
+    background-color: slategray;
     color: white;
 }
 
@@ -88,4 +89,24 @@
     .service-min-container-3 h2{
         font-size: 17px;
     }
+    .service-min-container-1{
+        
+    }
+    .service-min-container-1-header{
+        font-size: 30px;
+    }
+    .tech-name{
+        
+    }
+    .service-min-container-1 p{
+        color: white;
+        font-weight: 450;
+    }
+    .percent{
+        
+    }
+    .service-min-container-1 button{
+        
+    }
+    
 }

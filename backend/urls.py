@@ -15,17 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.conf.urls import url
+from django.urls import path,re_path
+from django.views.generic import TemplateView
 from django.conf import settings
 from .views import homepage,index
-from django.conf.urls.static import static
+from django.conf.urls.static import static 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('services.urls')),
+    path('api/', include('services.urls')),
     path('home/', homepage, name='homepage'),
-    path('', include('emailing.urls')),
-    path('', include('orders.urls')),
-    path('', index,name='index'),
+    path('api/', include('emailing.urls')),
+    path('api/', include('orders.urls')),
+    # path('api/',include('users.urls')),
+    # path('',index,name="index"),
+    re_path('(?!.*(static))', TemplateView.as_view(template_name ="index.html")),
 ]
 urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

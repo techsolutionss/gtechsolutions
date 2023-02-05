@@ -3,72 +3,45 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import "../static/contact.css"
 import {checkLength,checkEmail, checkPhone,displayError} from "../utility/validationFunction";
-import {publicRequest,headers,sendingEmail} from "../utility/fetchcalls";
+import {publicRequest,sendingEmail,headers} from "../utility/apicalls";
 
 const Contact = ()=>{
 
-    const [name,setname] = useState("")
-    const [email,setemail] = useState("")
-    const [phone,setphone] = useState("")
-    const [message,setmessage] = useState("")
-
+    
     const errorRef = useRef()
     const nameRef = useRef()
     const emailRef = useRef()
     const phoneRef = useRef()
     const messageRef = useRef()
 
-    const clearForm = ()=>{
-        setemail("")
-        setname("")
-        setmessage("")
-        setphone("")    
-        nameRef.current.value = ""
-        emailRef.current.value = ""
-        phoneRef.current.value = ""
-        messageRef.current.value = ""
+    const [data,setdata] = useState({})
+    const [errorMessage,seterrorMessage] = useState({})
+    
+
+    const handleDataChange = (e)=>{
+        setdata({...data,[e.target.name] : e.target.value})
     }
-
-
-
+    
     const submitForm = async(e)=>{
         e.preventDefault()
-        if(!name){
-            displayError(nameRef,"name fields cannot be empty ")
-            return 
-        }else if(name.length < 6){
-            return
-        }else if(!email){
-            displayError(emailRef,"email fields cannot be empty")
-            return
-        }else if(!phone){
-            displayError(phoneRef,"phone fields cannot be empty")
-            return
-        }else if(phone.length < 11){
-            return
-        }else if(isNaN(phone)){
-            return
-        }else if(!message){
-            displayErrorRef("message fields cannot be empty")
-            clearErrorRef()
-            return
-        }
-        
+                
         alert("successfully submitted")
-        var emailData={
-            name:name,
-            email:email,
-            phone:phone,
-            message:message
+        
+        console.log(data)
+
+        const sentMail = await sendingEmail(publicRequest,data,headers)
+        if (sentMail.status === 202){
+            console.log(sentMail.data)
         }
 
-        const sentMail = await sendingEmail(publicRequest,emailData,headers)
-        displayErrorRef(sentMail)
+        if(sentMail.status === 400){
+            seterrorMessage(sentMail.data)
+            console.log(sentMail)
+        }
         clearErrorRef()
-        clearForm()
+        setdata({})
 
     }
-
     
 
     const clearErrorRef = ()=>{
@@ -95,26 +68,30 @@ const Contact = ()=>{
                             <div className="column-container column-container-1">
                                 <div className="form-input">
                                     <input type="text"name="name" 
-                                        ref={nameRef} 
-                                        onInput={(e)=>checkLength(e.target)}
-                                        onChange={(e)=>setname(e.target.value)}
+                                        ref={nameRef}
+                                        value={data.name || ""} 
+                                        // onInput={(e)=>checkLength(e.target)}
+                                        onChange={(e)=>handleDataChange(e)}
                                         placeholder="name" autoComplete="off"/>
-                                    <small></small>
+                                        {errorMessage.name && <small>{errorMessage.name}</small>}
+                                        
                                 </div>
                                 <div className="form-input">
                                     <input type="email" name="email"
                                         ref={emailRef}
-                                        onInput={(e)=>checkEmail(e.target)}
-                                        onChange={(e)=>setemail(e.target.value)} 
+                                        value={data.email || ""}
+                                        // onInput={(e)=>checkEmail(e.target)}
+                                        onChange={(e)=>handleDataChange(e)} 
                                         placeholder="email" autoComplete="off"/>
                                     <small></small>
                                 </div>
                                 <div className="form-input">
                                     <small></small>
                                     <input type="text" name="phone"
-                                        ref={phoneRef} 
-                                        onInput={(e)=>checkPhone(e.target)}
-                                        onChange={(e)=>setphone(e.target.value)}
+                                        ref={phoneRef}
+                                        value={data.phone || ""} 
+                                        // onInput={(e)=>checkPhone(e.target)}
+                                        onChange={(e)=>handleDataChange(e)}
                                         placeholder="phone" autoComplete="off"/>
                                 </div>
                             </div>
@@ -122,7 +99,8 @@ const Contact = ()=>{
                                 <textarea name="message" id="message" 
                                 ref={messageRef}
                                 cols="30" rows="10"
-                                onChange={(e)=>setmessage(e.target.value)}
+                                value={data.message || ""}
+                                onChange={(e)=>handleDataChange(e)}
                                 placeholder="write us a message..."></textarea>
                             </div>
                         </div>
