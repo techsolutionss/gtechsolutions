@@ -12,7 +12,7 @@ export const headers ={
 
 export const sendingEmail = async(endPoint,datas,configurations)=>{
     try {
-        const response = await endPoint.post("api/mailing/",datas,configurations)
+        const response = await endPoint.post("/api/mailing/",datas,configurations)
         return response                      
     } catch (error) {
         return error.response
@@ -22,7 +22,7 @@ export const sendingEmail = async(endPoint,datas,configurations)=>{
 
 export const createUser = async(endPoint,userData,configurations)=>{
     try{
-        const response = await endPoint.post("api/createuser/",userData,configurations)
+        const response = await endPoint.post("/api/createuser/",userData,configurations)
         return response
     }catch(error){
         return error.response

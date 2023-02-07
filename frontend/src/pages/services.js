@@ -8,9 +8,9 @@ const Services = ()=>{
     useEffect(()=>{
         const fetchServices = async()=>{
             try {
-                const{data,status} = await publicRequest.get("/api/services")
-                if(status === 200){
-                    setservices(data)
+                const response = await publicRequest.get("/api/services/")
+                if(response.status === 200){
+                    setservices(response.data)
                 }
                     
             } catch (error) {
@@ -41,10 +41,10 @@ const Services = ()=>{
                 <div className="service-min-container-2-1">
                     <h2 className="service-min-container-2-1-header">Our offered services</h2>
                     <div className="service-min-container-2">
-                    {
+                    {services?
                         services.map((service)=>
                         <ServiceBox key={service.id} service ={service}/>
-                        )
+                        ): <div>no services to show</div>
                     }
                     </div>
                 </div>

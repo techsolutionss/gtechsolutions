@@ -55,6 +55,11 @@
 .signup-form-btn:hover{
     background-color: slategray;
 }
+.show-errors{
+    color: red;
+    font-size: 15px;
+}
+
 
 /* small media screens */
 @media screen and (max-width:600px){

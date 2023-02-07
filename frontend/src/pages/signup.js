@@ -20,18 +20,13 @@ const SignUp = ()=>{
         const sendDetails = await createUser(publicRequest,data,headers)
         if(sendDetails.status === 201){
             alert("successful")
+            seterrors({})
+            console.log(sendDetails)
         }
         if(sendDetails.status === 400){
             var serverErrors = sendDetails.data
-            // for(var rError in serverErrors){
-            //     console.log(rError)
-            //     Object.
-            //     seterrors({...errors,tino:serverErrors[rError][0]})
-            // } 
-            // Object.entries(serverErrors).forEach(([key,value])=>{
-            //     seterrors()
-            // })
             console.log(serverErrors)
+            seterrors(serverErrors)
         }
         
         
@@ -54,7 +49,13 @@ const SignUp = ()=>{
                                     onChange={(e)=> handleData(e)}
                                     name="first_name" />
                             </div>
-                            <small></small>
+                            {
+                                errors.first_name &&(
+                                    <small className="show-errors">{errors.first_name[0]}</small>
+                                )
+                                
+                            }
+                            
                         </div>
                         <div className="form-group-signup">
                             <label htmlFor="lastname">Lastname</label>
@@ -66,7 +67,12 @@ const SignUp = ()=>{
                                     onChange={(e)=> handleData(e)}
                                     name="last_name" />
                             </div>
-                            <small></small>
+                            {
+                                errors.last_name &&(
+                                    <small className="show-errors">{errors.last_name[0]}</small>
+                                )
+                                
+                            }
                         </div>
                         <div className="form-group-signup">
                             <label htmlFor="email">Email</label>
@@ -78,7 +84,12 @@ const SignUp = ()=>{
                                     onChange={(e)=> handleData(e)}
                                     name="email" />
                             </div>
-                            <small></small>
+                            {
+                                errors.email &&(
+                                    <small className="show-errors">{errors.email[0]}</small>
+                                )
+                                
+                            }
                         </div>
                         <div className="form-group-signup">
                             <label htmlFor="username">Preffered Username</label>
@@ -92,7 +103,7 @@ const SignUp = ()=>{
                             </div>
                             {
                               errors.username && (
-                                <small>{errors.username}</small>
+                                <small className="show-errors">{errors.username[0]}</small>
                               )  
                             }
                             
@@ -107,7 +118,12 @@ const SignUp = ()=>{
                                     onChange={(e)=> handleData(e)}
                                     name="password" />
                             </div>
-                            <small></small>
+                            {
+                                errors.password &&(
+                                    <small className="show-errors">{errors.password[0]}</small>
+                                )
+                                
+                            }
                         </div>
                         <p className="signup-form-text">already have an account <Link className="signup-form-text-link" to="#">Sign in</Link></p>
                         <div className="signup-form-btn-container">
