@@ -1,11 +1,11 @@
 import "../static/signup.css"
 import { Link} from "react-router-dom"
 import { useState } from "react"
+// import { useSelector } from "react-redux"
 import { createUser,publicRequest,headers} from "../utility/apicalls"
 
 const SignUp = ()=>{
 
-    
     const [data,setdata] = useState({})
     const [errors,seterrors] = useState({})
     
@@ -16,13 +16,14 @@ const SignUp = ()=>{
     const createAccount = async(event)=>{
         event.preventDefault()
 
-        console.log(data)
         const sendDetails = await createUser(publicRequest,data,headers)
         if(sendDetails.status === 201){
             alert("successful")
             seterrors({})
+            setdata({})
             console.log(sendDetails)
         }
+        // console.log(sendDetails)
         if(sendDetails.status === 400){
             var serverErrors = sendDetails.data
             console.log(serverErrors)
@@ -40,7 +41,7 @@ const SignUp = ()=>{
                     <h3>sign up to access our service</h3>
                     <form onSubmit={createAccount}>
                         <div className="form-group-signup">
-                            <label htmlFor="firstname">Firstname</label>
+                            <label htmlFor="firstname">Firstname*</label>
                             <div className="form-input-signup">
                                 <input type="text" 
                                     autoComplete="off"
@@ -58,7 +59,7 @@ const SignUp = ()=>{
                             
                         </div>
                         <div className="form-group-signup">
-                            <label htmlFor="lastname">Lastname</label>
+                            <label htmlFor="lastname">Lastname*</label>
                             <div className="form-input-signup">
                                 <input type="text" 
                                     autoComplete="off"
@@ -75,7 +76,7 @@ const SignUp = ()=>{
                             }
                         </div>
                         <div className="form-group-signup">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">Email*</label>
                             <div className="form-input-signup">
                                 <input type="email" 
                                     autoComplete="off"
@@ -92,7 +93,7 @@ const SignUp = ()=>{
                             }
                         </div>
                         <div className="form-group-signup">
-                            <label htmlFor="username">Preffered Username</label>
+                            <label htmlFor="username">Preffered Username*</label>
                             <div className="form-input-signup">
                                 <input type="text" 
                                     autoComplete="off"
@@ -109,7 +110,7 @@ const SignUp = ()=>{
                             
                         </div>
                         <div className="form-group-signup">
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">Password*</label>
                             <div className="form-input-signup">
                                 <input type="text" 
                                     autoComplete="off"
@@ -125,7 +126,7 @@ const SignUp = ()=>{
                                 
                             }
                         </div>
-                        <p className="signup-form-text">already have an account <Link className="signup-form-text-link" to="#">Sign in</Link></p>
+                        <p className="signup-form-text">already have an account <Link className="signup-form-text-link" to="/signin">Sign in</Link></p>
                         <div className="signup-form-btn-container">
                             <button className="signup-form-btn" type="submit">Sign up</button>
                         </div>

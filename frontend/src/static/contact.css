@@ -91,17 +91,28 @@
 .form-input input::placeholder{
     color: black;
 }
-.form-input small{
+.form-input small,.column-container-2 small{
     color: red;
-    font-size: 15px;
+    font-size: 17px;
 }
 .column-container-2{
     padding: 10px;
 }
-.column-container-2 textarea{
+.normal-height{
     padding: 10px;
     width: 100%;
     height: 100%;
+    outline: none;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--color-1);
+    color: var(--color-1);
+}
+.reduced-height{
+    padding: 10px;
+    width: 100%;
+    height: 90%;
     outline: none;
     font-size: 17px;
     border-radius: 5px;
@@ -148,8 +159,9 @@
         padding-bottom: 10px;
     }
     .contact-form{
-        min-height: 80vh;
+        min-height: 90vh;
         width: 90%;
+        padding-bottom: 30px;
     }
     .input-container{
         display: flex;
@@ -184,7 +196,7 @@
         margin-bottom: 10px;
     }
     .btn-container button{
-        margin-bottom: 5px;
+        margin-bottom: 0;
         height: 40px;
         width: 170px;
     }

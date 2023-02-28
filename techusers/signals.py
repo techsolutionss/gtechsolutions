@@ -6,6 +6,11 @@ from rest_framework.authtoken.models import Token
 
 @receiver(post_delete, sender=User)
 def delete_auth_token(sender, instance, *args, **kwargs):
-    # Token.objects.get(user=instance)
-    print(instance)
-    print("deleted")
+    try:
+        token = Token.objects.get(user=instance).delete()
+    except Token.DoesNotExist:
+        pass
+    except:
+        pass
+
+    

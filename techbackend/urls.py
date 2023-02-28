@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('techusers.urls')),
     path('api/',include('techservices.urls')),
+    path('api/',include('techemails.urls')),
     re_path('(?!.*(static))',TemplateView.as_view(template_name="index.html"))
 ]
 

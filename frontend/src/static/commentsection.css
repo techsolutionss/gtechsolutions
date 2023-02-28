@@ -6,13 +6,12 @@
 .comment-section-container{
     width: 100%;
     min-height: 40vh;
-    padding: 0 60px;
     background-color: white;
 }
 .comment-section-container-header{
     padding-top: 50px;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
 }
 .comment-section-min-container{
@@ -30,10 +29,10 @@
 
 /* comment styling */
 .comment-container{
-    width: 40vw;
+    width: 40%;
     height: 20vh;
-    padding: 10px 15px;
-    margin: 25px;
+    padding: 10px 20px;
+    margin: 30px;
     background-color: white;
 }
 .comment-container:nth-child(odd){
@@ -63,7 +62,7 @@
 .comment-form-container{
     width: 100%;
     min-height: 50vh;
-    padding: 80px 0;
+    padding: 80px 60px;
     background-color: white;
 }
 .comment-form-container p{
@@ -71,6 +70,32 @@
 }
 .comment-form-container-min{
     margin-top: 20px;
+}
+.comment-error-container{
+    width: 600px;
+    border: 1px solid red;
+    height: 25px;
+    color: red;
+    padding:0 10px;
+    font-size: 15px;
+}
+.comment-error-container-hide{
+    display: none;
+}
+.form-group-comment{
+    width: 600px;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-group-comment input{
+    width: 250px;
+    height: 35px;
+    padding: 10px;
+}
+.form-group-comment input::placeholder{
+    font-size: 17px;
 }
 .comment-form-container-min-form-input textarea{
     padding: 10px 20px;
@@ -80,9 +105,9 @@
     font-size: 15px;
 }
 .comment-btn{
-    margin-top: 20px;
+    margin-top: 40px;
     display: inline-block;
-    width: 300px;
+    width: 250px;
     padding: 10px;
     color: white;
     border: none;
@@ -91,4 +116,73 @@
 }
 .comment-btn:hover{
     background-color: slategray;
+}
+
+@media screen and (max-width:600px){
+    .comment-section-min-container{
+        width: 100%;
+        padding: 0;
+        
+    }
+    .comment-form-container{
+        margin: 20px 0;
+    }
+    .comment-error-container{
+       width: 100%;
+       height: 25px;
+       border: 1px solid red; 
+    }
+    .comment-form-container-min-form-input textarea{
+        width: 100%;
+        height: 25vh;
+    }
+    .comment-btn{
+        width: 100%;
+    }
+    .form-group-comment{
+        width: 100%;
+        margin: 40px 0;
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+    }
+    .form-group-comment input{
+        width: 100%;
+        height: 35px;
+        padding: 10px;
+    }
+}
+
+/* comment boxes media styling */
+@media screen and (max-width:600px){
+    .comment-container{
+        min-width: 80%;
+        min-height: 25vh;
+        padding: 10px 15px;
+        margin: 25px;
+        background-color: white;
+    }
+    .comment-container:nth-child(odd){
+        
+    }
+    .comment-container-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .comment-container-header h4{
+        font-size: 20px;
+        color: var(--color-2);
+    }
+    .comment-container-header p{
+        color: slategray;
+    }
+    .comment-container-body{
+        margin-top: 10px;
+    }
+    .comment-container-body p{
+        font-size: 15px;
+        color: slategray;
+    }
+    
 }

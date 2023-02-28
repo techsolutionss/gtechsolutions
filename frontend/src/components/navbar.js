@@ -29,7 +29,7 @@ const Navbar = ()=>{
                     <li className="navbar-list"><Link to="/about" className="navbar-list-link">about</Link></li>
                 </ul>
                 <div className="navbar-links">
-                    <Link to="#" className="sign-in-link navbar-link"
+                    <Link to="/signin" className="sign-in-link navbar-link"
                     onMouseOver={showSignInText}
                     onMouseOut={hideSignInText}
                     >

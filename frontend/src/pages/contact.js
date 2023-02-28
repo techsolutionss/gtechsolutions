@@ -2,20 +2,13 @@ import { useRef, useState } from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import "../static/contact.css"
-import {checkLength,checkEmail, checkPhone,displayError} from "../utility/validationFunction";
 import {publicRequest,sendingEmail,headers} from "../utility/apicalls";
 
 const Contact = ()=>{
 
-    
-    const errorRef = useRef()
-    const nameRef = useRef()
-    const emailRef = useRef()
-    const phoneRef = useRef()
-    const messageRef = useRef()
-
     const [data,setdata] = useState({})
-    const [errorMessage,seterrorMessage] = useState({})
+    const [error,seterror] = useState({})
+    const errorRef = useRef()
     
 
     const handleDataChange = (e)=>{
@@ -26,21 +19,16 @@ const Contact = ()=>{
         e.preventDefault()
                 
         alert("successfully submitted")
-        
-        console.log(data)
-
         const sentMail = await sendingEmail(publicRequest,data,headers)
         if (sentMail.status === 202){
             console.log(sentMail.data)
         }
 
         if(sentMail.status === 400){
-            seterrorMessage(sentMail.data)
+            seterror(sentMail.data)
             console.log(sentMail)
         }
         clearErrorRef()
-        setdata({})
-
     }
     
 
@@ -68,40 +56,37 @@ const Contact = ()=>{
                             <div className="column-container column-container-1">
                                 <div className="form-input">
                                     <input type="text"name="name" 
-                                        ref={nameRef}
                                         value={data.name || ""} 
-                                        // onInput={(e)=>checkLength(e.target)}
                                         onChange={(e)=>handleDataChange(e)}
                                         placeholder="name" autoComplete="off"/>
-                                        {errorMessage.name && <small>{errorMessage.name}</small>}
+                                        {error.name && <small>{error.name[0]}</small>}
                                         
                                 </div>
                                 <div className="form-input">
                                     <input type="email" name="email"
-                                        ref={emailRef}
                                         value={data.email || ""}
-                                        // onInput={(e)=>checkEmail(e.target)}
                                         onChange={(e)=>handleDataChange(e)} 
                                         placeholder="email" autoComplete="off"/>
+                                        {error.email && <small>{error.email[0]}</small>}
                                     <small></small>
                                 </div>
                                 <div className="form-input">
                                     <small></small>
                                     <input type="text" name="phone"
-                                        ref={phoneRef}
                                         value={data.phone || ""} 
-                                        // onInput={(e)=>checkPhone(e.target)}
                                         onChange={(e)=>handleDataChange(e)}
                                         placeholder="phone" autoComplete="off"/>
+                                        {error.phone && <small>{error.phone[0]}</small>}
                                 </div>
                             </div>
                             <div className="column-container column-container-2">
-                                <textarea name="message" id="message" 
-                                ref={messageRef}
+                                <textarea name="message" id="message"
+                                className={`${!error.message ? "normal-height":"reduced-height"}`}
                                 cols="30" rows="10"
                                 value={data.message || ""}
                                 onChange={(e)=>handleDataChange(e)}
                                 placeholder="write us a message..."></textarea>
+                                {error.message && <small>{error.message[0]}</small>}
                             </div>
                         </div>
                         <div className="btn-container min-container-1"><button type="submit" >send message</button></div>

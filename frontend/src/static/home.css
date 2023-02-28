@@ -46,11 +46,12 @@
 .home-column-1-links-container{
     width: 60%;
     margin-top: 70px;
+    display: flex;
 }
 .home-link{
     display: inline-block;
-    width: 200px;
-    padding: 10px 0;
+    width: 500px;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
     color: white;
@@ -89,7 +90,7 @@
     justify-content: space-between;
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:786px){
     .home-column-1{
         height: 100vh;
         padding-left: 40px;

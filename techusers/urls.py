@@ -5,4 +5,5 @@ app_name="techusers"
 
 urlpatterns = [
     path('createuser/',views.UserViews.as_view(), name="createuser"),
+    path('loginuser/',views.LoginViews.as_view(), name="loginuser"),
 ]

@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export const publicRequest = axios.create({
-    baseURL:"http://localhost:8000"
+    baseURL:"http://localhost:8000",
+    timeout:1000
 })
 
 export const headers ={
@@ -20,21 +21,33 @@ export const sendingEmail = async(endPoint,datas,configurations)=>{
 
 }
 
+// api endpoint for creating in users
 export const createUser = async(endPoint,userData,configurations)=>{
     try{
         const response = await endPoint.post("/api/createuser/",userData,configurations)
+        console.log(response)
         return response
     }catch(error){
         return error.response
     }
     
 }
-const countryOptions = {
-    method: 'GET',
-    url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/countries?limit=25',
-    headers: {
-      'X-RapidAPI-Key': '3ee126e59cmshe4a93f6870138a0p129efejsn6cf00f4bce01',
-      'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+// api endpoint for login in users
+export const loginUser = async(endPoint,userData,configurations)=>{
+    try{
+        const response = await endPoint.post("/api/loginuser/",userData,configurations)
+        return response
+    }catch(error){
+        return error.response
     }
-  }
+    
+}
+// const countryOptions = {
+//     method: 'GET',
+//     url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/countries?limit=25',
+//     headers: {
+//       'X-RapidAPI-Key': '3ee126e59cmshe4a93f6870138a0p129efejsn6cf00f4bce01',
+//       'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+//     }
+//   }
   

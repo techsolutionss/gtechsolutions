@@ -55,3 +55,10 @@ class UserSerializer(serializers.Serializer):
     
     def update(self, instance, validated_data):
         pass
+
+class LoginSerializers(serializers.Serializer):
+    username = serializers.CharField(max_length=50)
+    password = serializers.CharField(max_length=50)
+
+
+    
