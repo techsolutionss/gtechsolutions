@@ -20,7 +20,7 @@ const Services = ()=>{
         }
         fetchServices()
     },[])
-
+    console.log(services)
     return(
         <>
             <div className="service-container">
@@ -44,7 +44,8 @@ const Services = ()=>{
                     {services?
                         services.map((service)=>
                         <ServiceBox key={service.id} service ={service}/>
-                        ): <div>no services to show</div>
+                        ): <div className="no-services">no services to show</div>
+
                     }
                     </div>
                 </div>

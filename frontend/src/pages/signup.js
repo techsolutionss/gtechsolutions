@@ -21,9 +21,7 @@ const SignUp = ()=>{
             alert("successful")
             seterrors({})
             setdata({})
-            console.log(sendDetails)
-        }
-        // console.log(sendDetails)
+            console.log(sendDetails) 
         if(sendDetails.status === 400){
             var serverErrors = sendDetails.data
             console.log(serverErrors)
@@ -135,6 +133,6 @@ const SignUp = ()=>{
             </div>
         </>
     )
-        
+}                         
 }
 export default SignUp

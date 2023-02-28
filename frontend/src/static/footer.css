@@ -11,7 +11,6 @@
     background-color: slategray;
     padding: 0 40px;
     display: flex;
-    gap: 20px;
     display: flex;
     align-items: center;
 
@@ -23,10 +22,14 @@
     border-radius: 50%;
     color: white;
     display: flex;
+    margin-left: 30px;
     align-items: center;
     justify-content: center;
     transition: transform .3s;
     background-color: var(--color-2);
+}
+.icon-link:first-child{
+    margin-left: 0;
 }
 .icon-link:hover{
     transform: translateY(-5px);
@@ -62,5 +65,7 @@
 }
 
 @media screen and (max-width:600px) {
-          
+    .footer-container{
+        padding-left: 20px;
+    }         
 }
