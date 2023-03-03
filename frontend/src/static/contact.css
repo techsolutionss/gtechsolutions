@@ -149,9 +149,12 @@
 @media screen and (max-width:600px){
     .contact-container{
         min-height: 120vh;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .contact-form-container{
         min-height: 90vh;
+        padding: 0;
     }
     .contact-header{
         font-size: 25px;
@@ -160,7 +163,8 @@
     }
     .contact-form{
         min-height: 90vh;
-        width: 90%;
+        width: 100%;
+        padding-left: 0;
         padding-bottom: 30px;
     }
     .input-container{
@@ -168,7 +172,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 30px;
+        padding: 0;
+    }
+    .form-input{
+        margin-top: 30px;
+        width: 100%;
+    }
+    .form-input:first-child{
+        margin-top: 0;
+    }
+    .form-input input{
+        width: 90%;
     }
     .contact-footer{
         width: 100%;
@@ -184,8 +198,11 @@
         padding: 0;
     }
     .column-container-2{
-        margin-top: 30px;
-        height: 140px;
+        margin-top: 90px;
+        min-height: 140px;
+    }
+    .column-container-2 textarea{
+        margin-top: 40px;
     }
     
 

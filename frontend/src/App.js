@@ -18,6 +18,7 @@ function App() {
             <Route  path="/order" element={<Order/>}/>
             <Route  path="/signup" element={<SignUp/>}/>
             <Route  path="/signin" element={<SignIn/>}/>
+            {/* <Route  path="*" element={<SignIn/>}/> */}
           </Routes>        
       </Router>
   );

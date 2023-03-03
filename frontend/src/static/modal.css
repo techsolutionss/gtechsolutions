@@ -82,7 +82,7 @@
 
 @media screen and (max-width:600px){
     .value-box-container{
-        width: 390px;
+        min-width: 80%;
         height: 200px;
         margin-top: 50px;    
     }

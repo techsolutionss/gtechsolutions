@@ -7,7 +7,6 @@ import { loginUser,publicRequest,headers} from "../utility/apicalls"
 
 const SignIn = ()=>{
 
-    var user = useSelector((state)=>state.user)
     var dispatch = useDispatch()
     const [data,setdata] = useState({})
     const [errors,seterrors] = useState({})
@@ -23,22 +22,28 @@ const SignIn = ()=>{
             seterrors({"password":["this field is required"]})
             return
         }
+        
+        dispatch(loginStart())
         var sendCredentials = await loginUser(publicRequest,data,headers)
         if(sendCredentials.status === 202){
             seterrors({})
             setdata(({}))
             errorRef.current.classList.add("sign-in-error-div-hide")
             alert("login successful")
+            dispatch(loginSuccess(sendCredentials.data.user))
         }if(sendCredentials.status === 400){
             seterrors(sendCredentials.data)
+            dispatch(loginFailure())
         }
         if(sendCredentials.status === 401){
             seterrors({})
+            dispatch(loginFailure())
             errorRef.current.innerHTML = sendCredentials.data.message
             errorRef.current.classList.remove("sign-in-error-div-hide")
         }
         if(sendCredentials.status === 403){
             seterrors({})
+            dispatch(loginFailure())
             errorRef.current.innerHTML = sendCredentials.data.message
             errorRef.current.classList.remove("sign-in-error-div-hide")
         }
@@ -52,7 +57,7 @@ const SignIn = ()=>{
     return(
         <div className="signin-container">
              <div className="signin-form-container">
-             <h3>sign up to access our service</h3>
+             <h3>sign in to access our service</h3>
              <div className="sign-in-error-div-hide sign-in-error-div-show" ref={errorRef}></div>
                 <form onSubmit={signIn}>
                     <div className="form-group-signup">
@@ -90,7 +95,7 @@ const SignIn = ()=>{
                     </div>
                     <p className="signup-form-text">don't have an account <Link className="signup-form-text-link" to="/signup">Sign up</Link></p>
                     <div className="signup-form-btn-container">
-                        <button className="signup-form-btn" type="submit">Sign up</button>
+                        <button className="signup-form-btn" type="submit">Sign in</button>
                     </div>
                 </form>
              </div>

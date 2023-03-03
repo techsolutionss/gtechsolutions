@@ -25,6 +25,7 @@ urlpatterns = [
     path('api/',include('techusers.urls')),
     path('api/',include('techservices.urls')),
     path('api/',include('techemails.urls')),
+    path('api/',include('techorders.urls')),
     re_path('(?!.*(static))',TemplateView.as_view(template_name="index.html"))
 ]
 

@@ -16,7 +16,7 @@ class UserViews(APIView):
         user_serializer = UserSerializer(data=user_data)
         if user_serializer.is_valid():
             user_serializer.save()
-            return Response(status=status.HTTP_201_CREATED)
+            return Response({"message":"user successfully created"},status=status.HTTP_201_CREATED)
         return Response(user_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     
 
@@ -41,9 +41,9 @@ class LoginViews(APIView):
         try:
             token = Token.objects.get(user=user)
         except Token.DoesNotExist:
-            return Response(status=status.HTTP_403_FORBIDDEN)
+            return Response({"message":"this account has been deactivated"},status=status.HTTP_403_FORBIDDEN)
         except:
-            return Response(status=status.HTTP_403_FORBIDDEN)
+            return Response({"message":"this account has been deactivated"},status=status.HTTP_403_FORBIDDEN)
         # collecting user datails to be sent back as response
         parsed_user ={}
         parsed_user["username"] = user.username 

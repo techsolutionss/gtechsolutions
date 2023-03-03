@@ -2,13 +2,12 @@ import axios from "axios";
 
 export const publicRequest = axios.create({
     baseURL:"http://localhost:8000",
-    timeout:1000
+    timeout:15000
 })
 
 export const headers ={
     "Accept":"application/json",
-    "content-Type":"application/json",
-    "connection":"keep-alive"
+    "content-Type":"application/json"
 }
 
 export const sendingEmail = async(endPoint,datas,configurations)=>{
@@ -21,11 +20,21 @@ export const sendingEmail = async(endPoint,datas,configurations)=>{
 
 }
 
+export const sendingComment = async(endPoint,datas,configurations)=>{
+    try {
+        const response = await endPoint.post("/api/comments/",datas,configurations)
+        return response                      
+    } catch (error) {
+        return error.response
+    }
+
+}
+
+
 // api endpoint for creating in users
 export const createUser = async(endPoint,userData,configurations)=>{
     try{
         const response = await endPoint.post("/api/createuser/",userData,configurations)
-        console.log(response)
         return response
     }catch(error){
         return error.response

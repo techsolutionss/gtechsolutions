@@ -20,7 +20,6 @@ const Services = ()=>{
         }
         fetchServices()
     },[])
-    console.log(services)
     return(
         <>
             <div className="service-container">
@@ -41,11 +40,10 @@ const Services = ()=>{
                 <div className="service-min-container-2-1">
                     <h2 className="service-min-container-2-1-header">Our offered services</h2>
                     <div className="service-min-container-2">
-                    {services?
+                    {services.length ?
                         services.map((service)=>
-                        <ServiceBox key={service.id} service ={service}/>
-                        ): <div className="no-services">no services to show</div>
-
+                            <ServiceBox key={service.id} service ={service}/> 
+                        ): <div className="empty-service-container"><h2>no services are available at the moment</h2></div>
                     }
                     </div>
                 </div>

@@ -1,37 +1,56 @@
 import "../static/signup.css"
 import { Link} from "react-router-dom"
 import { useState } from "react"
-// import { useSelector } from "react-redux"
 import { createUser,publicRequest,headers} from "../utility/apicalls"
 
 const SignUp = ()=>{
 
     const [data,setdata] = useState({})
-    const [errors,seterrors] = useState({})
-    
+    const [errors,seterrors] = useState({})   
     const handleData = (e)=>{
         setdata({...data,[e.target.name]:e.target.value})
     }
 
-    const createAccount = async(event)=>{
-        event.preventDefault()
+    const createAccount = async(e)=>{
+        e.preventDefault()
 
-        const sendDetails = await createUser(publicRequest,data,headers)
-        if(sendDetails.status === 201){
-            alert("successful")
-            seterrors({})
-            setdata({})
-            console.log(sendDetails) 
-        if(sendDetails.status === 400){
-            var serverErrors = sendDetails.data
-            console.log(serverErrors)
-            seterrors(serverErrors)
+        // form validation starts here
+        if(!data.first_name){
+            seterrors({"first_name":["first name field cannot be empty"]})
+            return
+        }
+        if(!data.last_name){
+            seterrors({"last_name":["last name field cannot be empty"]})
+            return
+        }
+        if(!data.email){
+            seterrors({"email":["email field cannot be empty"]})
+            return
+        }
+        if(!data.username){
+            seterrors({"username":["user name field cannot be empty"]})
+            return
+        }
+        if(!data.password){
+            seterrors({"password":["password field cannot be empty"]})
+            return
         }
         
-        
+        const sendDetails = await createUser(publicRequest,data,headers)
+        if(sendDetails.status === 201){
+            alert("user successfully created")
+            seterrors({})
+            setdata({}) 
+            setTimeout(()=>{
+                window.location.href="/signin"
+            },2000)
+        }
+        if(sendDetails.status === 400){
+            var serverErrors = sendDetails.data
+            seterrors(serverErrors)
+        }        
     }
-
-
+    
     return(
         <>
             <div className="signup-container">
@@ -43,7 +62,6 @@ const SignUp = ()=>{
                             <div className="form-input-signup">
                                 <input type="text" 
                                     autoComplete="off"
-                                    // ref={firstnameRef}
                                     value={data.first_name || ""}
                                     onChange={(e)=> handleData(e)}
                                     name="first_name" />
@@ -61,7 +79,6 @@ const SignUp = ()=>{
                             <div className="form-input-signup">
                                 <input type="text" 
                                     autoComplete="off"
-                                    // ref={firstnameRef}
                                     value={data.last_name || ""}
                                     onChange={(e)=> handleData(e)}
                                     name="last_name" />
@@ -78,7 +95,6 @@ const SignUp = ()=>{
                             <div className="form-input-signup">
                                 <input type="email" 
                                     autoComplete="off"
-                                    // ref={firstnameRef}
                                     value={data.email || ""}
                                     onChange={(e)=> handleData(e)}
                                     name="email" />
@@ -95,7 +111,6 @@ const SignUp = ()=>{
                             <div className="form-input-signup">
                                 <input type="text" 
                                     autoComplete="off"
-                                    // ref={firstnameRef}
                                     value={data.username || ""}
                                     onChange={(e)=> handleData(e)}
                                     name="username" />
@@ -112,7 +127,6 @@ const SignUp = ()=>{
                             <div className="form-input-signup">
                                 <input type="text" 
                                     autoComplete="off"
-                                    // ref={firstnameRef}
                                     value={data.password || ""}
                                     onChange={(e)=> handleData(e)}
                                     name="password" />
@@ -134,5 +148,5 @@ const SignUp = ()=>{
         </>
     )
 }                         
-}
+
 export default SignUp

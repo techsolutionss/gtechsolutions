@@ -22,7 +22,7 @@
     border-radius: 50%;
     color: white;
     display: flex;
-    margin-left: 30px;
+    margin-left: 25px;
     align-items: center;
     justify-content: center;
     transition: transform .3s;
@@ -32,7 +32,7 @@
     margin-left: 0;
 }
 .icon-link:hover{
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); */
 }
 
 .service-box-container{
@@ -67,5 +67,8 @@
 @media screen and (max-width:600px) {
     .footer-container{
         padding-left: 20px;
-    }         
+    }  
+    .service-box-container{
+        min-width: 80%;
+    }       
 }
