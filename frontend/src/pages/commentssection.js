@@ -26,13 +26,13 @@ const CommentSection = ()=>{
     return(
         <div className="comment-section-container">
             <h2 className="comment-section-container-header">
-                What our client are saying about us
+                What our clients are saying about us
             </h2>
             <div className="comment-section-min-container">
                 {comments.length?  
                     comments.map((comment)=>
                         <Comment key={comment.id} comments ={comment}/> 
-                    ): <div className="empty-comment-container"><h2>there are no comments to show</h2></div>      
+                    ): <div className="empty-comment-container"><h2>There are no comments to display</h2></div>      
                 }
                     
             </div>

@@ -51,7 +51,7 @@ const CommentForm = ()=>{
 
     return(
         <div className="comment-form-container">
-            <p>As a client-friendly team we like to know what our customers thinks about our services</p>
+            <p>It is extremely important to us what our customers thinks about our services,share with us how your user experience have been.</p>
             <div className="comment-form-container-min">
                 <form onSubmit={postComment}>
                     <div className="comment-error-container comment-error-container-hide" ref={errorRef}>

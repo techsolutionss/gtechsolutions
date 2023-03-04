@@ -71,7 +71,7 @@
     }   
     .signup-form-container{
         width: 90%;
-        padding: 60px 0;
+        padding: 40px 0;
         padding-left: 17px;
 
     }
@@ -80,25 +80,26 @@
     }
     .signup-form-container h3{
         font-size: 25px;
+        font-weight: 400;
     }
     .form-input-signup input{
         width: 97%;
         font-size: 17px;
     }
     .form-group-signup{
-        margin-top: 20px;
+        margin-top: 12px;
     }
     .form-group-signup label{
-        font-size: 20px;
+        font-size: 19px;
     }
     .signup-form-text{
         margin-top: 25px;
     }
     .signup-form-btn{
-        width: 230px;
-        height: 50px;
+        width: 250px;
+        height: 45px;
         margin-top: 25px;
-        font-size: 27px;
+        font-size: 26px;
     }
     .show-errors{
         font-size: 18px;

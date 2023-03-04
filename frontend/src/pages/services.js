@@ -43,7 +43,7 @@ const Services = ()=>{
                     {services.length ?
                         services.map((service)=>
                             <ServiceBox key={service.id} service ={service}/> 
-                        ): <div className="empty-service-container"><h2>no services are available at the moment</h2></div>
+                        ): <div className="empty-service-container"><h2>No services are available at the moment</h2></div>
                     }
                     </div>
                 </div>
