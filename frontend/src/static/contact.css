@@ -17,29 +17,24 @@
 }
 .contact-header{
     text-align: center;
-    text-transform: capitalize;
-    font-size: 30px;
-    color: slategray;
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--color-2);
+    padding-top: 10px;
 }
 .contact-form-container{
-    padding: 10px 0;
     width: 100%;
-    height: 70vh;
+    height: 72vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
 }
 .contact-form{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-
+    width: 50%;
+    min-height: 100%;
+    padding:10px;
+    background: white;  
 }
 
 .min-container-1{
@@ -53,50 +48,46 @@
     background-color: white;
     font-size: 20px;
     color: red;
-    height: 40px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    height: 30px;
+    border: 1px solid red;
     visibility: hidden;
 }
 .input-container{
     width: 100%;
     height: 300px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    
+    padding-top: 10px;
 }
-.column-container{
-    flex-basis: 50%;
-    width: 300px;
-    height: 270px;
+.form-input{
+    margin-top: 15px;
 }
-.column-container-1{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
+.form-input:first-child{
+    margin-top: 0;
 }
-.form-input input{
+.form-input-input{
     width: 100%;
-    height: 50px;
+    height: 40px;
     padding: 10px;
     outline: none;
     font-size: 17px;
-    border-radius: 5px;
     border: 1px solid var(--color-1);
     background-color: transparent;
     color: black;
 }
+.form-input-error{
+    border: 1px solid red;
+}
 .form-input input::placeholder{
     color: black;
+    font-size: 15px;
 }
-.form-input small,.column-container-2 small{
+.form-input small,.text-input-container small{
     color: red;
-    font-size: 17px;
+    font-size: 15px;
 }
-.column-container-2{
-    padding: 10px;
+.text-input-container{
+    width: 100%;
+    height: 140px;
+    margin-top: 15px;
 }
 .normal-height{
     padding: 10px;
@@ -104,7 +95,6 @@
     height: 100%;
     outline: none;
     font-size: 17px;
-    border-radius: 5px;
     background-color: transparent;
     border: 1px solid var(--color-1);
     color: var(--color-1);
@@ -115,18 +105,20 @@
     height: 90%;
     outline: none;
     font-size: 17px;
-    border-radius: 5px;
     background-color: transparent;
     border: 1px solid var(--color-1);
     color: var(--color-1);
 }
-.column-container-2 textarea::placeholder{
+.text-input-container textarea::placeholder{
     color: var(--color-1);
+    font-size: 15px;
 }
-
+.btn-container{
+    margin-top: 50px;
+}
 .btn-container button{
-    height: 80%;
-    width: 40%;
+    height: 70%;
+    width: 50%;
     font-size: 20px;
     border-radius: 5px;
     outline: none;
@@ -148,37 +140,34 @@
 
 @media screen and (max-width:600px){
     .contact-container{
-        min-height: 90vh;
-        padding: 0 20px;
-
+        height: 80vh;
+        padding: 0 10px;
     }
     .contact-form-container{
-        min-height: 30vh;
+        height: 70vh;
         padding: 0;
     }
     .contact-header{
-        font-size: 25px;
-        padding-top: 20px;
-        height: 90px;
+        font-size: 23px;
+        padding-top: 30px;
+        height: 65px;
         padding-bottom: 10px;
     }
     .contact-form{
-        min-height: 40vh;
+        height: 50vh;
         width: 100%;
-        padding-left: 0;
-        padding-right: 0;
-        padding-bottom: 30px;
-        display: flex;
-        flex-direction: column;
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .input-container{
-        min-height: 80vh;
-        display: block;
+        height: 250px;
     }
     .form-input{
-        margin-top: 19px;
+        margin-top: 25px;
         width: 100%;
     }
+    
     .form-input:first-child{
         margin-top: 0;
     }
@@ -188,36 +177,25 @@
     .contact-footer{
         width: 100%;
         position: absolute;
-        bottom: -30%;
+        bottom: -15%;
         left: 0;
-        display: none;
     }
-    
-    .column-container-1{
-        display: block;
-        height: 37vh;
+    .text-input-container{
+        height: 200px;
+        margin-top: 5px;
     }
-    .column-container-2{
-        margin-top: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        height: 20vh;
+    .text-input-container textarea{
+        margin-top: 25px;
+        height: 70%;
     }
-    .column-container-1,.column-container-2{
-        padding: 0;
-        width: 100%;
-        
+    .btn-container{
+        margin-top: 170px;
+        height: 0;
     }
-    
-    .column-container-2 textarea{
-        margin-top: 0;
-        height: 100%;
-    }
-    
     .btn-container button{
-        margin-bottom: 160px;
-        height: 40px;
-        width: 170px;
+        margin-bottom: 0;
+        height: 50px;
+        width: 100%;
     }
     
 }

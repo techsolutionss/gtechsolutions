@@ -19,8 +19,7 @@ const Home = ()=>{
                     <div className="home-column-1-1">
                         <h2 className="home-column-1-header">Give your brand the online presence it deserves with with Tech<span>solution</span>. </h2>
                         <p className="home-column-1-p">
-                            We develop functional and appealing websites, analyse and identity
-                            key insights to help clients unlock potential and maximize growth.
+                            We develop functional and appealing websites.
                             When it comes to creative website design and analysing data, we have 
                             got it all covered. We are responsible for the sites performance and capacity,
                             a personalized customer experience which is focused on the success of our clients businesses.
@@ -35,7 +34,7 @@ const Home = ()=>{
                     </div>
                 </div>
                 <div className="home-column-2-1">
-                        <h2 className="home-column-2-1-header">The values we live by</h2>
+                        <h2 className="home-column-2-1-header">Why we are your number one choice</h2>
                         <div className="home-column-2-1-boxes">
                             {
                                 value.map((item,idx) =>{
