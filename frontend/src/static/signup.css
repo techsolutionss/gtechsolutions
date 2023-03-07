@@ -67,10 +67,10 @@
 /* small media screens */
 @media screen and (max-width:600px){
     .signup-container{
-
+        padding: 0 10px;
     }   
     .signup-form-container{
-        width: 90%;
+        width: 100%;
         padding: 40px 0;
         padding-left: 17px;
 

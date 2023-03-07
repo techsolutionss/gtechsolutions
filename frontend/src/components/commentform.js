@@ -60,18 +60,18 @@ const CommentForm = ()=>{
                         <input type="text" name="name" 
                         onChange={(e)=>handleChange(e)}
                         value={data.name || ""}
-                        placeholder="name" autoComplete="off" />
+                        placeholder="Name" autoComplete="off" />
                         <input type="email" name="email" 
                         onChange={(e)=>handleChange(e)}
                         value={data.email || ""}
-                        placeholder="email" autoComplete="off" />
+                        placeholder="Email" autoComplete="off" />
                     </div>
                     <div className="comment-form-container-min-form-input">
                             <textarea name="comments" 
                             cols="80"
                             value={data.comments || ""} 
                             onChange={(e)=>handleChange(e)}
-                            placeholder="leave a comment"
+                            placeholder="Leave a comment"
                             rows="8">
                             </textarea>
                     </div>

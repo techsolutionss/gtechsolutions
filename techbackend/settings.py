@@ -159,13 +159,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'medialfiles')
 
 # email configurations
-EMAIL_BACKEND = ''
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587.
 EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = ''
+EMAIL_HOST_PASSWORD = 'austinejoseph60@gmail.com'
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 
 # aws email configurations for production environment
 # EMAIL_BACKEND = 'django_ses.SESBackend'
@@ -174,7 +174,7 @@ AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 AWS_SES_REGION_NAME ='us-east-1'
 # AWS_SES_REGION_ENDPOINT ='REGION-ENDPOINT' #(ex: email.us-east-2.amazonaws.com)
 
-ADMINS = [("austine","austinejoseph60@gmail.com"),("gabriel","aluegabriel381@gmail.com")]
+ADMINS = [("austine","austinejoseph60@gmail.com"),("gabriel","aulegabriel381@gmail.com")]
 MANAGERS = ADMINS
 
 # rest_framework configurations 

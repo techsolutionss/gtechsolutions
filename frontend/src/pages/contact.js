@@ -36,21 +36,26 @@ const Contact = ()=>{
         alert("successfully submitted")
         const sentMail = await sendingEmail(publicRequest,data,headers)
         if (sentMail.status === 202){
-            console.log(sentMail.data)
+            setdata({})
+            seterror({})
+            errorRef.current.style.visibility = "visible"
+            errorRef.current.style.border = "1px solid green"
+            errorRef.current.style.color = "green"
+            errorRef.current.innerHTML = sentMail.data.message
+            clearErrorRef()
         }
 
         if(sentMail.status === 400){
             seterror(sentMail.data)
             console.log(sentMail)
         }
-        clearErrorRef()
     }
     
 
     const clearErrorRef = ()=>{
         setTimeout(()=>{
             errorRef.current.style.visibility = "hidden"
-        },4000)
+        },5000)
     }
 
     const displayErrorRef = (message)=>{
