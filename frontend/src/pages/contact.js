@@ -51,7 +51,6 @@ const Contact = ()=>{
         }
     }
     
-
     const clearErrorRef = ()=>{
         setTimeout(()=>{
             errorRef.current.style.visibility = "hidden"

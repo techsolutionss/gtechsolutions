@@ -1,4 +1,4 @@
-from django.core.mail import EmailMessage,BadHeaderError
+from django.core.mail import EmailMessage,BadHeaderError,get_connection
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.utils.translation import gettext_lazy as _
@@ -13,13 +13,17 @@ def send_email_message(from_email,message):
     from_email= from_email
     if admins:
         for admin in admins:
-            send_email = EmailMessage(
-                subject=subject,
-                body=message,
-                from_email=from_email,
-                to=[admin[1]]
-            )
-            send_email.send()
+            with get_connection(
+                "django.core.mail.backends.console.EmailBackend"
+            ) as connection:
+                send_email = EmailMessage(
+                    subject=subject,
+                    body=message,
+                    from_email=from_email,
+                    to=[admin[1]],
+                    connection=connection
+                )
+                send_email.send()
         return True
     else:
         return False
