@@ -41,9 +41,8 @@
     padding: 10px;
     background-color: white;
     /* border: 1px solid var(--color-2); */
-    border-radius: 10px; 
-    border-top: 2px solid var(--color-2);
-    border-bottom: 2px solid var(--color-2); 
+    /* border-top: 2px solid var(--color-2); */
+    /* border-bottom: 2px solid var(--color-2);  */
     text-align: center;
     margin: 20px;
     cursor: pointer;
