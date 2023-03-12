@@ -74,7 +74,7 @@
     margin-top: 10px;
     text-align: left;
     height: fit-content;
-    word-break: break-all;
+    word-wrap: break-word;
     margin-bottom: 15px;
 }
 .comment-container-body p{
@@ -85,7 +85,6 @@
 .comment-container-footer{
     position: absolute;
     bottom: 5px;
-    left: 440px;
 }
 .thumbs-up-icon{
     color: var(--color-2);
@@ -267,8 +266,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        font-size: 20px;
+        gap: 15px;
+        font-size: 15px;
         font-weight: 400;
         text-transform: capitalize;
         color: var(--color-2);
@@ -278,7 +277,7 @@
         font-size: 12px;
     }
     .comment-container-body{
-        margin-top: 10px;
+        margin-top: 15px;
         min-height: 70px;
         margin-bottom: 10px;
     }
@@ -287,7 +286,6 @@
         color: slategray;
     }
     .comment-container-footer{
-        left: 315px;
         bottom: 5px;
     }
     .thumbs-up-icon{
