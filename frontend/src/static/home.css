@@ -3,6 +3,7 @@
     --color-3:  darkorange;
     --color-2:  rgb(19, 150, 150);
     --sm-pad:10px;
+    --headers-font: Georgia, 'Times New Roman', Times, serif;
     /* --color-2: #e0096d; */
 }
 *{
@@ -79,6 +80,7 @@
     font-size: 30px;
     font-weight: 400;
     color: var(--color-2);
+    font-family: var(--headers-font);
 }
 .home-column-2-1-boxes{
     margin-top: 40px;

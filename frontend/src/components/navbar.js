@@ -2,6 +2,7 @@ import {Link} from "react-router-dom"
 import "../static/navbar.css"
 import { FaTimes,FaBars } from "react-icons/fa";
 import { useState } from "react";
+// import logo from "../assets/images/gtech-logo.jpg"
 
 const Navbar = ()=>{
 

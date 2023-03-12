@@ -16,6 +16,7 @@
     padding-top: 80px;
     color: var(--color-2);
     background-color: white;
+    font-family: var(--headers-font);
 }
 .comment-section-min-container{
     width: 100%;
@@ -45,14 +46,13 @@
 /* comment styling */
 .comment-container{
     width: 40%;
-    height: 20vh;
+    min-height: 20vh;
     padding: 10px 20px;
     margin: 30px;
     background-color: white;
+    position: relative;
 }
-.comment-container:nth-child(odd){
-    
-}
+
 .comment-container-header{
     display: flex;
     align-items: center;
@@ -61,16 +61,34 @@
 .comment-container-header h4{
     font-size: 20px;
     color: var(--color-2);
+    text-transform: capitalize;
 }
-.comment-container-header p{
+.user-icon{
     color: slategray;
+}
+.comment-container-footer p{
+    color: var(--color-2);
+
 }
 .comment-container-body{
     margin-top: 10px;
+    text-align: left;
+    height: fit-content;
+    word-break: break-all;
+    margin-bottom: 15px;
 }
 .comment-container-body p{
     font-size: 15px;
     color: slategray;
+    
+}
+.comment-container-footer{
+    position: absolute;
+    bottom: 5px;
+    left: 440px;
+}
+.thumbs-up-icon{
+    color: var(--color-2);
 }
 
 /* comment form styling */
@@ -227,7 +245,7 @@
 @media screen and (max-width:768px){
     .comment-container{
         width: 80%;
-        min-height: 130px;
+        min-height: 100px;
         padding: 10px 10px;
         margin: 25px;
         background-color: white;
@@ -246,19 +264,34 @@
         justify-content: space-between;
     }
     .comment-container-header h4{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
         font-size: 20px;
         font-weight: 400;
+        text-transform: capitalize;
         color: var(--color-2);
     }
-    .comment-container-header p{
-        color: var(--color-3);
+    .comment-container-footer p{
+        color: var(--color-2);
+        font-size: 12px;
     }
     .comment-container-body{
         margin-top: 10px;
+        min-height: 70px;
+        margin-bottom: 10px;
     }
     .comment-container-body p{
-        font-size: 15px;
+        font-size: 14px;
         color: slategray;
+    }
+    .comment-container-footer{
+        left: 315px;
+        bottom: 5px;
+    }
+    .thumbs-up-icon{
+        color: var(--color-2);
     }
     .comment-section-container-header{
         font-size: 24px;

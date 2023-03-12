@@ -71,6 +71,7 @@
 .value-box-container h2{
     text-transform: capitalize;
     color: var(--color-3);
+    font-family: var(--headers-font);
 
 }
 .value-box-container p{
