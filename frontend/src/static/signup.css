@@ -54,6 +54,7 @@
     background-color: var(--color-2);
     color: white;
     margin-top: 25px;
+    cursor: pointer;
 }
 .signup-form-btn:hover{
     background-color: slategray;
@@ -79,7 +80,7 @@
 
     }
     .signup-form-container h3{
-        font-size: 25px;
+        font-size: 22px;
         font-weight: 400;
     }
     .form-input-signup input{
@@ -96,13 +97,16 @@
         margin-top: 25px;
     }
     .signup-form-btn{
-        width: 250px;
+        width: 220px;
         height: 45px;
         margin-top: 25px;
-        font-size: 26px;
+        font-size: 23px;
     }
     .show-errors{
         font-size: 18px;
+    }
+    .signup-form-btn:hover{
+        background: var(--color-2);
     }
 
 }

@@ -118,6 +118,9 @@
         z-index: 3;
         padding: 0 var(--sm-pad);
     }
+    .navbar-header{
+        font-size: 23px;
+    }
     .navbar-nav{
         position: fixed;
         top: 7.5%;
