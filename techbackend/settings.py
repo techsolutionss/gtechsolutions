@@ -17,7 +17,7 @@ environ.Env.read_env('.env')
 SECRET_KEY = 'django-insecure-5zw7$u2p_ceaw#a-(b0!q2x#s0jt05n@mxhhq^)5b1badi5#!@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = True #env('DEBUG')
 
 ALLOWED_HOSTS = ['*']#['localhost','127.0.0.1', 'techsolutioncom-dev.us-east-1.elasticbeanstalk.com']
 
@@ -77,11 +77,12 @@ WSGI_APPLICATION = 'techbackend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 #     # 'default': {
 #     #     'ENGINE': 'django.db.backends.mysql', 
 #     #     'NAME': '',
@@ -92,19 +93,19 @@ WSGI_APPLICATION = 'techbackend.wsgi.application'
 #     # }
 # }
  
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
-    }
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
+# if 'RDS_DB_NAME' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': os.environ['RDS_DB_NAME'],
+#             'USER': os.environ['RDS_USERNAME'],
+#             'PASSWORD': os.environ['RDS_PASSWORD'],
+#             'HOST': os.environ['RDS_HOSTNAME'],
+#             'PORT': os.environ['RDS_PORT'],
+#         }
+#     }
+# # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# # SECURE_SSL_REDIRECT = True
 
 
 # Password validation
@@ -151,7 +152,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # cors configurations
 CORS_ALLOW_ALL_ORIGINS = True 
 CORS_ALLOW_CREDENTIALS = True
-# CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
+#CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
 
 # static and media files configurations
 STATIC_URL = '/static/'
@@ -188,18 +189,18 @@ REST_FRAMEWORK = {
     ]
 }
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_REGION_NAME = env('AWS_S3_REGION_NAME')
+# AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+# AWS_S3_REGION_NAME = env('AWS_S3_REGION_NAME')
 
-AWS_S3_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
-AWS_S3_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-AWS_LOCATION = 'file'
-AWS_S3_FILE_OVERWRITE=False
+# AWS_S3_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+# AWS_S3_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# AWS_LOCATION = 'file'
+# AWS_S3_FILE_OVERWRITE=False
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/media/'
+# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/media/'
 

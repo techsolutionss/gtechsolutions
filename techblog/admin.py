@@ -1,5 +1,5 @@
 from django.contrib import admin, messages
-from techblog.models import PostField, Tag
+from techblog.models import PostField, Tag, Comment
 
 
 @admin.register(PostField)
@@ -28,3 +28,10 @@ class TagAdmin(admin.ModelAdmin):
     list_display = ('name', 'id')
     list_filter = ('name',)
     search_fields = ('name',)
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('body', 'id', 'post',
+                    'author', 'created_at')
+    search_fields = ['author', 'body']
+    list_filter = ('created_at',)
