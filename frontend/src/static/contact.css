@@ -32,7 +32,7 @@
 }
 .contact-form{
     width: 50%;
-    min-height: 100%;
+    min-height: 80%;
     padding:10px;
     background: white;  
 }
@@ -51,6 +51,7 @@
     height: 30px;
     border: 1px solid red;
     visibility: hidden;
+    padding-bottom: 4px;
 }
 .input-container{
     width: 100%;
@@ -58,20 +59,21 @@
     padding-top: 10px;
 }
 .form-input{
-    margin-top: 15px;
+    margin-top: 20px;
 }
 .form-input:first-child{
     margin-top: 0;
 }
 .form-input-input{
     width: 100%;
-    height: 40px;
+    height: 38px;
     padding: 10px;
     outline: none;
     font-size: 17px;
+    border-radius: 2px;
     border: 1px solid var(--color-1);
     background-color: transparent;
-    color: black;
+    color: var(--color-1);
 }
 .form-input-error{
     border: 1px solid red;
@@ -86,8 +88,8 @@
 }
 .text-input-container{
     width: 100%;
-    height: 140px;
-    margin-top: 15px;
+    height: 120px;
+    margin-top: 20px;
 }
 .normal-height{
     padding: 10px;
@@ -95,6 +97,7 @@
     height: 100%;
     outline: none;
     font-size: 17px;
+    border-radius: 2px;
     background-color: transparent;
     border: 1px solid var(--color-1);
     color: var(--color-1);
@@ -105,6 +108,7 @@
     height: 90%;
     outline: none;
     font-size: 17px;
+    border-radius: 2px;
     background-color: transparent;
     border: 1px solid var(--color-1);
     color: var(--color-1);
@@ -154,7 +158,7 @@
         padding-bottom: 10px;
     }
     .contact-form{
-        height: 50vh;
+        height: 100%;
         width: 100%;
         margin-top: 10px;
         padding-left: 10px;

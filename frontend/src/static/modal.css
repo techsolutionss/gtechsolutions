@@ -70,7 +70,8 @@
 }
 .value-box-container h2{
     text-transform: capitalize;
-    color: var(--color-2);
+    color: var(--color-3);
+    font-family: var(--headers-font);
 
 }
 .value-box-container p{
@@ -82,11 +83,20 @@
 
 @media screen and (max-width:600px){
     .value-box-container{
-        min-width: 80%;
-        height: 200px;
-        margin-top: 50px;    
+        width: 80%;
+        height: 170px;
+        margin-top: 50px; 
+        padding: 10px;   
     }
     .value-box-container:first-child{
         margin-top: 0;
+    }
+    .value-box-container p{
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .value-box-container h2{
+        font-size: 22px;
+        font-weight: 370;
     }
 }

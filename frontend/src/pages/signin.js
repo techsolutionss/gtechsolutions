@@ -95,7 +95,7 @@ const SignIn = ()=>{
                     </div>
                     <p className="signup-form-text">don't have an account <Link className="signup-form-text-link" to="/signup">Sign up</Link></p>
                     <div className="signup-form-btn-container">
-                        <button className="signup-form-btn" type="submit">Sign in</button>
+                        <button className="signin-form-btn" type="submit">Sign in</button>
                     </div>
                 </form>
              </div>

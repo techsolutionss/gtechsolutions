@@ -2,6 +2,7 @@ import {Link} from "react-router-dom"
 import "../static/navbar.css"
 import { FaTimes,FaBars } from "react-icons/fa";
 import { useState } from "react";
+// import logo from "../assets/images/gtech-logo.jpg"
 
 const Navbar = ()=>{
 
@@ -19,7 +20,7 @@ const Navbar = ()=>{
 
     return(
         <div className="navbar">
-            <h2 className="navbar-header">Tech<span>solution</span></h2>
+            <h2 className="navbar-header">Gtech<span>solution</span></h2>
             <div className={`navbar-nav ${closeMobile ?"collapse":"" }`}>
                 <ul>
                     <li className="navbar-list"><Link to="/" className="navbar-list-link">home</Link></li>

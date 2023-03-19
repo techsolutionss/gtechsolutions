@@ -16,6 +16,7 @@
     height: 30px;
     margin-top: 20px;
     padding-left: 10px;
+    padding-top: 2px;
     border: 1px solid red;
     color: red;
 }
@@ -42,10 +43,34 @@
     outline: none;
     padding: 5px;
 }
+.signin-form-btn{
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 20px;
+    width: 190px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    background-color: var(--color-2);
+    color: white;
+    margin-top: 25px;
+    cursor: pointer;
+}
+.signin-form-btn:hover{
+    background: slategray;
+}
+
 @media screen and (max-width:600px) {
+    .signin-container{
+        padding: 0 10px;
+    }
     .signin-form-container{
-        width: 90%;
-        padding-left: 17px;
+        width: 100%;
+        padding-left: 15px;
+    }
+    .signin-form-container h3{
+        font-size: 22px;
+        font-weight: 400;
     }
     .form-input-signin input{
         width: 97%;
@@ -54,4 +79,16 @@
     .form-group-signin label{
         font-size: 20px;
     }    
-}
+    .sign-in-error-div-show{
+        width: 97%;
+    }
+    .signin-form-btn{
+        width: 220px;
+        height: 45px;
+        margin-top: 25px;
+        font-size: 22px;
+    }
+    .signin-form-btn:hover{
+        background: var(--color-2);
+    }
+}   
