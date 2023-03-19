@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class PostField(models.Model):
-    title = models.CharField(max_length=150, unique=True, verbose_name=_('title'))
+    title = models.CharField(max_length=150, unique=True, verbose_name='title')
     slug = models.SlugField(max_length=150, unique=True, allow_unicode=True)
     author= models.ForeignKey(User, on_delete=models.RESTRICT,null=True, blank=True)
     thumbnail = models.ImageField(upload_to='thumbnails')
