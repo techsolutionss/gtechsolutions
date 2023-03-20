@@ -7,10 +7,16 @@ const CommentForm = ()=>{
 
 
     const [data,setdata] = useState({})
+    const [openComment,setopenComment] = useState(false)
     const[errors,seterrors] = useState({})
     const errorRef = useRef()
     const handleChange = (e)=>{
         setdata({...data,[e.target.name]:e.target.value})
+    }
+
+    const toggleComment =()=>{
+        setopenComment(!openComment)
+        window.scroll(0,document.body.scrollHeight)
     }
     const postComment = async(e)=>{
         e.preventDefault()
@@ -50,7 +56,11 @@ const CommentForm = ()=>{
     }
 
     return(
-        <div className="comment-form-container">
+        <>
+        <div className="comment-toggle-container">
+            <button className="comment-toggle-btn" onClick={toggleComment}>Make a comment</button>
+        </div>
+        <div className={`comment-form-container ${!openComment? "close-comment":""}`}>
             <p>It is extremely important to us what our customers thinks about our services,share with us how your user experience have been.</p>
             <div className="comment-form-container-min">
                 <form onSubmit={postComment}>
@@ -79,6 +89,7 @@ const CommentForm = ()=>{
                 </form>
             </div>
         </div>
+        </>
     );
 }
 export default CommentForm

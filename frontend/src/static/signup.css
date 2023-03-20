@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: whitesmoke;    
+    background-color: var(--background);    
 }
 .signup-form-container{
     width: 40%;
@@ -22,7 +22,7 @@
     margin-top: 30px;
 }
 .signup-form-container h3{
-    color: var(--color-2);
+    color: var(--secondary);
     font-weight: 500;
 }
 .form-group-signup{
@@ -40,7 +40,7 @@
     color: slategray;
 }
 .signup-form-text-link{
-    color: var(--color-2);
+    color: var(--primary);
     font-size: 15px;
 }
 .signup-form-btn{
@@ -51,13 +51,13 @@
     padding: 5px;
     outline: none;
     border: none;
-    background-color: var(--color-2);
+    background-color: var(--primary);
     color: white;
     margin-top: 25px;
     cursor: pointer;
 }
 .signup-form-btn:hover{
-    background-color: slategray;
+    background: var(--secondary);
 }
 .show-errors{
     color: red;
@@ -106,7 +106,7 @@
         font-size: 18px;
     }
     .signup-form-btn:hover{
-        background: var(--color-2);
+        background: var(--primary);
     }
 
 }

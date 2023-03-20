@@ -34,7 +34,7 @@
 
 }
 .signin-form-container h3{
-    color: var(--color-2);
+    color: var(--secondary);
     font-weight: 500;
 }
 .form-input-signin input{
@@ -51,13 +51,16 @@
     padding: 5px;
     outline: none;
     border: none;
-    background-color: var(--color-2);
+    background-color: var(--primary);
     color: white;
     margin-top: 25px;
     cursor: pointer;
 }
 .signin-form-btn:hover{
-    background: slategray;
+    background: var(--secondary);
+}
+.signup-form-text-link{
+    color: var(--secondary);
 }
 
 @media screen and (max-width:600px) {
@@ -68,6 +71,7 @@
         width: 100%;
         padding-left: 15px;
     }
+    
     .signin-form-container h3{
         font-size: 22px;
         font-weight: 400;
@@ -89,6 +93,6 @@
         font-size: 22px;
     }
     .signin-form-btn:hover{
-        background: var(--color-2);
+        background: var(--primary);
     }
 }   

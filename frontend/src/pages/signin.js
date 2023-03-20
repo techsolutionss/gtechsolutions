@@ -11,7 +11,6 @@ const SignIn = ()=>{
     const [data,setdata] = useState({})
     const [errors,seterrors] = useState({})
     const errorRef = useRef()
-
     const signIn = async (e)=>{
         e.preventDefault()
         if(!data.username){
@@ -26,11 +25,12 @@ const SignIn = ()=>{
         dispatch(loginStart())
         var sendCredentials = await loginUser(publicRequest,data,headers)
         if(sendCredentials.status === 202){
+            alert("you have successfully logged in")
             seterrors({})
             setdata(({}))
             errorRef.current.classList.add("sign-in-error-div-hide")
-            alert("login successful")
             dispatch(loginSuccess(sendCredentials.data.user))
+            window.location.href="/"
         }if(sendCredentials.status === 400){
             seterrors(sendCredentials.data)
             dispatch(loginFailure())

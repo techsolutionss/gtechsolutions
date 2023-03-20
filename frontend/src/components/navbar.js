@@ -26,8 +26,9 @@ const Navbar = ()=>{
                     <li className="navbar-list"><Link to="/" className="navbar-list-link">home</Link></li>
                     {/* <li className="navbar-list"><Link to="/services" className="navbar-list-link">services</Link></li> */}
                     <li className="navbar-list"><Link to="#" className="navbar-list-link">recent work</Link></li>
+                    <li className="navbar-list"><Link to="#" className="navbar-list-link">blog</Link></li>
                     <li className="navbar-list"><Link to="/contact" className="navbar-list-link">contact</Link></li>
-                    <li className="navbar-list"><Link to="/about" className="navbar-list-link">about</Link></li>
+                    <li className="navbar-list"><Link to="#" className="navbar-list-link">about</Link></li>
                 </ul>
                 <div className="navbar-links">
                     <Link to="/signin" className="sign-in-link navbar-link"
