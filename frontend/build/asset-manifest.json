@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.47e9b391.css",
-    "main.js": "/static/js/main.85dea6b8.js",
+    "main.css": "/static/css/main.53744968.css",
+    "main.js": "/static/js/main.db240c6d.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
-    "static/media/IMG-20230303-WA0027.jpg": "/static/media/IMG-20230303-WA0027.2d87114aa9ca3435e8e4.jpg",
-    "static/media/IMG-20230303-WA0020.jpg": "/static/media/IMG-20230303-WA0020.f5f6089bec5a1f4eba0f.jpg",
+    "static/media/gtech-logo.jpg": "/static/media/gtech-logo.0fd8da6d414fdeb61b66.jpg",
+    "static/media/IMG-20230304-WA0022.jpg": "/static/media/IMG-20230304-WA0022.2bd23ae5506a47f7e130.jpg",
     "index.html": "/index.html",
-    "main.47e9b391.css.map": "/static/css/main.47e9b391.css.map",
-    "main.85dea6b8.js.map": "/static/js/main.85dea6b8.js.map",
+    "main.53744968.css.map": "/static/css/main.53744968.css.map",
+    "main.db240c6d.js.map": "/static/js/main.db240c6d.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.47e9b391.css",
-    "static/js/main.85dea6b8.js"
+    "static/css/main.53744968.css",
+    "static/js/main.db240c6d.js"
   ]
 }

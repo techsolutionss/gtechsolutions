@@ -9,7 +9,7 @@ const Contact = ()=>{
     const [data,setdata] = useState({})
     const [error,seterror] = useState({})
     const errorRef = useRef()
-    
+    const cCodeRef = useRef()
 
     const handleDataChange = (e)=>{
         setdata({...data,[e.target.name] : e.target.value})
@@ -28,7 +28,15 @@ const Contact = ()=>{
         if(!data.phone){
             seterror({"phone":["phone field cannot be left empty"]})
             return
-        }    
+        } 
+        if(isNaN(data.phone)){
+            seterror({"phone":["please enter a valid phone number"]})
+            return
+        } 
+        if(data.phone.length !== 10){
+            seterror({"phone":["please enter a valid phone number"]})
+            return
+        } 
         if(!data.message){
             seterror({"message":["message field cannot be left empty"]})
             return
@@ -90,12 +98,17 @@ const Contact = ()=>{
                                 <small></small>
                             </div>
                             <div className="form-input">
-                                <small></small>
+                                <div className="form-input-phone">
+                                <select name="country-code" id="country-code" ref={cCodeRef}>
+                                    <option value="+1">+1</option>
+                                    <option value="+234">+234</option>
+                                </select>
                                 <input type="text" name="phone"
                                     value={data.phone || ""} 
                                     onChange={(e)=>handleDataChange(e)}
                                     className={`form-input-input ${error.phone && "form-input-error"}`}
                                     placeholder="Phone" autoComplete="off"/>
+                                </div>
                                     {error.phone && <small>{error.phone[0]}</small>}
                             </div>
                             <div className="text-input-container">

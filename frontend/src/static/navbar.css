@@ -7,7 +7,7 @@
 .navbar{
     width: 100%;
     height: 50px;
-    background-color: white;
+    background-color: var(--pre-color);
     padding-left:60px;
     padding-right: 40px;
     position: sticky;
@@ -18,7 +18,7 @@
     z-index: 5;
 }
 .navbar-header{
-    color: var(--color-2);
+    color: var(--primary);
     font-size: 30px;
 }
 .gtech-logo{
@@ -27,7 +27,7 @@
     border-radius: 50%;
 }
 .navbar-header span{
-    color: slategray;
+    color: var(--secondary);
 }
 .navbar-nav{
     display: flex;
@@ -39,14 +39,22 @@
     text-align: center;
     margin-left: 15px;
     height: 35px;
-    font-size: 20px;
-    color: slategray;
+    font-size: 18px;
+    padding-top: 3px;
+    color: white;
     text-transform: capitalize;
     text-decoration: none;
-    border: 1px solid var(--color-2);
+    border-radius: 5px;
+    background: var(--primary);
+}
+.navbar-link:last-child{
+    background: var(--secondary);
+}
+.navbar-link:last-child:hover{
+    background: var(--primary);
 }
 .navbar-link:hover{
-    background: var(--color-2);
+    background: var(--secondary);
     color: white;
     border: none;
 }
@@ -57,7 +65,7 @@
     display: inline-block;
     width: 120px;
     text-align: center;
-    margin-left: 15px;
+    margin-left: 10px;
     height: 35px;
     position: relative;
 }
@@ -71,7 +79,7 @@
     min-width: 170px;
     font-size: 14px;
     display: block;
-    background-color: slategray;
+    background-color: var(--primary);
     text-transform: lowercase;
     transition: all 2s;
 }
@@ -91,7 +99,7 @@
     height: 8%;
     bottom: 0;
     left: 0;
-    background-color: var(--color-2);
+    background-color: var(--secondary);
     transition: all .7s;
 }
 .navbar-nav ul li:hover::before{
@@ -101,18 +109,19 @@
     display: inline-block;
     width: 100%;
     height: 100%;
-    color: slategray;
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
+    font-weight: 400;
     transition: color .2s;
     font-weight: bold;
     text-transform: capitalize;
 }
 .navbar-list-link:hover{
-    color: var(--color-2);
+    color: var(--secondary);
 }
 .navbar-icon{
     display: none;
@@ -120,7 +129,7 @@
 
 @media screen and (max-width:768px) {
     .navbar{
-        z-index: 3;
+        z-index: 6;
         padding: 0 var(--sm-pad);
     }
     .navbar-header{
@@ -156,7 +165,7 @@
     .navbar-icon{
         display: block;
         font-size: 30px;
-        color: var(--color-2);
+        color: var(--primary);
         /* color: rgb(10, 238, 10); */
         z-index: 3;
     }
@@ -170,11 +179,11 @@
         display: block;
         margin: 0;
         margin-left: 6px;
-        border-bottom: 1px solid var(--color-2);
+        border-bottom: 1px solid var(--primary);
         
     }
     .navbar-nav ul li:hover{
-        background-color: var(--color-2);
+        background-color: var(--primary);
         border-bottom: none;
     }
     .navbar-list-link{
@@ -189,7 +198,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: slategray;
+        color: var(--primary);
     }
     .navbar-links{
         margin-top: 50px;
@@ -198,19 +207,19 @@
     }
     .navbar-link{
         display: block;
-        height: 50px;
+        height: 45px;
         margin-left: 6px;
         width: 100%;
         padding: 10px;
         font-size: 17px;
         font-weight: 500;
         margin-top: 40px;
-        background: var(--color-2);
+        background: var(--primary);
         color: white;
         
     }
     .navbar-link:hover{
-        background: slategray;
+        background: var(--primary);
     }
     .sign-in-link-text{
         display: none;

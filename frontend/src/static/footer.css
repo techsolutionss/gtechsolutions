@@ -8,7 +8,7 @@
     position: relative;
     width: 100%;
     height: 50px;
-    background-color: slategray;
+    background-color: var(--pre-color);
     padding: 0 40px;
     display: flex;
     display: flex;
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     transition: transform .3s;
-    background-color: var(--color-2);
+    background-color: var(--secondary);
 }
 .icon-link:first-child{
     margin-left: 0;
@@ -37,30 +37,37 @@
 
 .service-box-container{
     width: 380px;
-    height: 190px;
+    height: 220px;
     padding: 10px;
     background-color: white;
-    /* border: 1px solid var(--color-2); */
+    border-radius: 5px;
     /* border-top: 2px solid var(--color-2); */
     /* border-bottom: 2px solid var(--color-2);  */
     text-align: center;
     margin: 20px;
     cursor: pointer;
-    transition: transform .5s;
+    transition: transform .7s;
 }
 .service-box-container:hover{
-    transform: scale(0.9);
+    transform: scale(0.95);
+    background: var(--primary);
+}
+.service-box-container:hover h2{
+    color: white;
+}
+.service-box-container:hover p{
+    color: white;
 }
 .service-box-container h2{
-    color: var(--color-3);
+    color: var(--primary);
     font-size: 25px;
     padding-bottom: 10px;
     font-weight: 400;
     font-family: var(--headers-font);
 }
 .service-box-container p{
-    margin-top: 10px;
-    color: var(--color-1);
+    margin-top: 30px;
+    color: var(--primary);
 
 }
 
@@ -74,6 +81,13 @@
     }   
     .service-box-container:hover{
         transform: scale(1.0);
+        background: white;
+    }
+    .service-box-container:hover h2{
+        color: var(--primary);
+    }
+    .service-box-container:hover p{
+        color: var(--primary);
     }
     .service-box-container h2{
         font-size: 22px;

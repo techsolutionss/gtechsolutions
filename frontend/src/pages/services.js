@@ -25,7 +25,7 @@ const Services = ()=>{
             <div className="service-container">
                 <div className="service-min-container-1">
                     <h2 className="service-min-container-1-header">
-                        At <span className="tech-name">Techsolution</span> our passion is your success
+                        At <span className="tech-name">Gtechsolution</span> our passion is your success
                     </h2>
                     <p>
                         We are a reliable and technically inclined digital agency an talents network, changing creativity,
