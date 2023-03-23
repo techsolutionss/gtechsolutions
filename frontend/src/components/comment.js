@@ -5,7 +5,7 @@ const Comment = ({comments:{name,date,comment}})=>{
     return(
         <div className="comment-container">
             <div className="comment-container-header">
-                <h4><FaUser className="user-icon"/> {name}</h4>
+                <h4><FaUser className="user-icon"/> <p>{name}</p></h4>
                 <FaThumbsUp className="thumbs-up-icon"/>
             </div>
             <div className="comment-container-body">

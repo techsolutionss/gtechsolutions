@@ -34,7 +34,7 @@
     height: 100%;
     position: relative;
     padding-left: 10px;
-    padding-top: 190px;
+    padding-top: 120px;
 }
 .home-column-1-header{
     font-size: 35px;
@@ -124,8 +124,11 @@
     background: var(--pre-color);
     z-index: 1;
     border-radius: 30px;
-    top: 23%;
+    top: 38%;
     left: 20%;
+}
+.home-column-2-1{
+    display: none;
 }
 
 @media screen and (max-width:786px){
@@ -184,7 +187,7 @@
         margin-top: 60px;
     }
     .home-link{
-        width: 270px;
+        width: 250px;
         padding: 10px;
         margin-top: 35px;
         font-size: 23px;
@@ -214,5 +217,45 @@
     }
     .home-column-1-1-2-column h2{
         font-size: 25px;
+    }
+    .home-column-2-1{
+        display: block;
+        width: 100%;
+        min-height: 40vh;
+        background: var(--background);
+        position: relative;
+        padding-left: var(--headers-font);
+        padding-right: var(--headers-font);
+    }
+    .home-column-2-1-box{
+        position: absolute;
+        width: 60%;
+        height: 70%;
+        left: 10%;
+        top: 5%;
+        border-radius: 10px;
+        background: var(--primary);
+    }
+    .home-column-2-1-box-2{
+        position: absolute;
+        width: 60%;
+        height: 70%;
+        left: 20%;
+        top: 15%;
+        z-index: 2;
+        border-radius: 10px;
+        background-image: url("../assets/images/IMG-20230304-WA0022.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    .home-column-2-1-box-3{
+        position: absolute;
+        width: 60%;
+        height: 70%;
+        left: 30%;
+        top: 25%;
+        border-radius: 10px;
+        background: var(--pre-color);
+        
     }
 }

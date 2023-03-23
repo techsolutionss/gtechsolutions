@@ -1,9 +1,9 @@
 import "../static/home.css"
 import  Navbar  from "../components/navbar";
-import ValueBox from "../components/value-box";
+// import ValueBox from "../components/value-box";
 import { Link } from "react-router-dom";
-import { values } from "../utility/datas";
-import { useState } from "react";
+// import { values } from "../utility/datas";
+// import { useState } from "react";
 import Services from "./services";
 import CommentSection from "./commentssection";
 import Footer from "../components/footer";
@@ -11,14 +11,13 @@ import ValueBox1 from "../components/value-box-1";
 
 
 const Home = ()=>{
-    const [value,setvalue] = useState(values)
     return(
         <>
             <Navbar/>
             <div className="home-container">
                 <div className="home-column-1">
                     <div className="home-column-1-1">
-                        <h2 className="home-column-1-header">Give your brand the online presence it deserves with with Tech<span>solution</span>. </h2>
+                        <h2 className="home-column-1-header">Give your brand the online presence it deserves with Gtech<span>solution</span>. </h2>
                         <p className="home-column-1-p">
                             We develop functional and appealing websites.
                             When it comes to creative website design and analysing data, we have 
@@ -53,19 +52,11 @@ const Home = ()=>{
                         <div className="home-column-1-2-box-3"></div>
                     </div>
                 </div>
-                {/* <div className="home-column-2-1">
-                        <h2 className="home-column-2-1-header">Why we are your number one choice</h2>
-                        <div className="home-column-2-1-boxes">
-                            {
-                                value.map((item,idx) =>{
-                                    return(
-                                        <ValueBox key={idx} items={item}/>
-                                    );
-                                })
-                            }
-                            
-                        </div>
-                </div> */}
+                <div className="home-column-2-1">
+                    <div className="home-column-2-1-box"></div>
+                    <div className="home-column-2-1-box-2"></div>
+                    <div className="home-column-2-1-box-3"></div>
+                </div>
                 <ValueBox1/>
                 <Services/>
                 <CommentSection/>

@@ -8,6 +8,7 @@ import { loginUser,publicRequest,headers} from "../utility/apicalls"
 const SignIn = ()=>{
 
     var dispatch = useDispatch()
+    const user = useSelector((state)=>state.user.currentUser)
     const [data,setdata] = useState({})
     const [errors,seterrors] = useState({})
     const errorRef = useRef()
@@ -21,7 +22,6 @@ const SignIn = ()=>{
             seterrors({"password":["this field is required"]})
             return
         }
-        
         dispatch(loginStart())
         var sendCredentials = await loginUser(publicRequest,data,headers)
         if(sendCredentials.status === 202){

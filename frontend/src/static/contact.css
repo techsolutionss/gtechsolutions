@@ -75,6 +75,14 @@
     background-color: transparent;
     color: var(--color-1);
 }
+.form-input-phone{
+    display: flex;
+}
+.form-input-phone select{
+    width: 70px;
+    font-size: 15px;
+    margin-right: 5px;
+}
 .form-input-error{
     border: 1px solid red;
 }

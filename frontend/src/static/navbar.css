@@ -46,7 +46,12 @@
     text-decoration: none;
     border-radius: 5px;
     background: var(--primary);
-    border: 1px solid var(--secondary);
+}
+.navbar-link:last-child{
+    background: var(--secondary);
+}
+.navbar-link:last-child:hover{
+    background: var(--primary);
 }
 .navbar-link:hover{
     background: var(--secondary);

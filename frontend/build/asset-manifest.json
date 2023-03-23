@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.a5ba67ec.css",
-    "main.js": "/static/js/main.2edd09ac.js",
+    "main.css": "/static/css/main.53744968.css",
+    "main.js": "/static/js/main.db240c6d.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/gtech-logo.jpg": "/static/media/gtech-logo.0fd8da6d414fdeb61b66.jpg",
     "static/media/IMG-20230304-WA0022.jpg": "/static/media/IMG-20230304-WA0022.2bd23ae5506a47f7e130.jpg",
     "index.html": "/index.html",
-    "main.a5ba67ec.css.map": "/static/css/main.a5ba67ec.css.map",
-    "main.2edd09ac.js.map": "/static/js/main.2edd09ac.js.map",
+    "main.53744968.css.map": "/static/css/main.53744968.css.map",
+    "main.db240c6d.js.map": "/static/js/main.db240c6d.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5ba67ec.css",
-    "static/js/main.2edd09ac.js"
+    "static/css/main.53744968.css",
+    "static/js/main.db240c6d.js"
   ]
 }

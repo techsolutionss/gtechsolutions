@@ -7,13 +7,13 @@ const ValueBox1 = ()=>{
         <div className="value-box-1-container">
             <div className="value-box-1-container-column-1">
                 <div className="value-box-1-container-column-1-1">
-                    {/* <div className="horizontal">
+                    <div className="horizontal">
                         <h1>G</h1>
-                        <h1>T</h1>
+                        {/* <h1>T</h1>
                         <h1>E</h1>
-                        <h1>C</h1>
-                        <h1>H</h1>
-                    </div> */}
+                        <h1>C</h1> */}
+                        <h1>T</h1>
+                    </div>
                     <div className="value-box-1-container-column-1-1-circle">
                     <div className="value-box-1-container-column-1-1-circle-2"></div>
                     </div>
