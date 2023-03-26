@@ -4,6 +4,7 @@ import {Link} from "react-router-dom"
 import { useSelector,useDispatch } from "react-redux"
 import { loginFailure,loginStart,loginSuccess } from "../store/userslice/userslice"
 import { loginUser,publicRequest,headers} from "../utility/apicalls"
+import Modal from "../components/modal.js"
 
 const SignIn = ()=>{
 
@@ -12,6 +13,19 @@ const SignIn = ()=>{
     const [data,setdata] = useState({})
     const [errors,seterrors] = useState({})
     const errorRef = useRef()
+    const [openModal,setopenModal] = useState(false)
+    var message = "you have successfully logged in click ok to continue"
+
+    const open_modal = ()=>{
+        setopenModal(true)
+    }
+    const closeModal = ()=>{
+        setopenModal(false)
+        setInterval(()=>{
+            window.location.href="/"
+        },1000)
+
+    }
     const signIn = async (e)=>{
         e.preventDefault()
         if(!data.username){
@@ -25,12 +39,12 @@ const SignIn = ()=>{
         dispatch(loginStart())
         var sendCredentials = await loginUser(publicRequest,data,headers)
         if(sendCredentials.status === 202){
-            alert("you have successfully logged in")
             seterrors({})
             setdata(({}))
             errorRef.current.classList.add("sign-in-error-div-hide")
             dispatch(loginSuccess(sendCredentials.data.user))
-            window.location.href="/"
+            open_modal()
+            // window.location.href="/"
         }if(sendCredentials.status === 400){
             seterrors(sendCredentials.data)
             dispatch(loginFailure())
@@ -53,7 +67,7 @@ const SignIn = ()=>{
     const handleData = (e)=>{
         setdata({...data,[e.target.name]:e.target.value})
     }
-
+    
     return(
         <div className="signin-container">
              <div className="signin-form-container">
@@ -99,6 +113,7 @@ const SignIn = ()=>{
                     </div>
                 </form>
              </div>
+             <Modal message={message} title="successful" openModal={openModal} setopenModal={setopenModal} closeModal={closeModal}/>
         </div>
     );
 }
