@@ -17,7 +17,11 @@ const Navbar = ()=>{
     const hideSignInText = ()=>{
         setshowText(false)
     }
-
+    window.onclick = (e)=>{
+        if(e.target.id === "navbar-icon"){
+            alert()
+        }
+    }
     return(
         <div className="navbar">
             <h2 className="navbar-header">Gtech<span>solution</span></h2>
@@ -25,8 +29,8 @@ const Navbar = ()=>{
                 <ul>
                     <li className="navbar-list"><Link to="/" className="navbar-list-link">home</Link></li>
                     {/* <li className="navbar-list"><Link to="/services" className="navbar-list-link">services</Link></li> */}
-                    <li className="navbar-list"><Link to="#" className="navbar-list-link">recent work</Link></li>
-                    <li className="navbar-list"><Link to="/blog" className="navbar-list-link">blog</Link></li>
+                    {/* <li className="navbar-list"><Link to="#" className="navbar-list-link">recent work</Link></li> */}
+                    <li className="navbar-list"><Link to="/blogs" className="navbar-list-link">blog</Link></li>
                     <li className="navbar-list"><Link to="/contact" className="navbar-list-link">contact</Link></li>
                     <li className="navbar-list"><Link to="#" className="navbar-list-link">about</Link></li>
                 </ul>
@@ -41,7 +45,7 @@ const Navbar = ()=>{
                     <Link to="/signup" className="sign-up-link navbar-link">sign up</Link>
                 </div>
             </div>
-            <div className="navbar-icon">{closeMobile?<FaBars onClick={closeNavigation} />:<FaTimes onClick={closeNavigation} />}</div>
+            <div className="navbar-icon" id="navbar-icon">{closeMobile?<FaBars onClick={closeNavigation} />:<FaTimes onClick={closeNavigation} />}</div>
         </div>
     );
 }
