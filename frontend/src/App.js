@@ -9,6 +9,7 @@ import SignIn from "./pages/signin";
 import { useSelector,useDispatch} from "react-redux";
 import { logOut } from "./store/userslice/userslice";
 import Blog from "./pages/blog";
+import BlogSinglePage from "./pages/blogsinglepage";
 
 function App() {
   var dispatch = useDispatch()
@@ -25,7 +26,8 @@ function App() {
             <Route  path="/order" element={user.currentUser ?<Order/>:<SignIn/>}/>
             <Route  path="/signup" element={<SignUp/>}/>
             <Route  path="/signin" element={<SignIn/>}/>
-            <Route  path="/blog" element={!user.currentUser?<SignIn/>:<Blog/>}/>
+            <Route  path="/blogs" element={<Blog/>}/>
+            <Route  path="/blog/:category/:id" element={<BlogSinglePage/>}/>
           </Routes>        
       </Router>
   );

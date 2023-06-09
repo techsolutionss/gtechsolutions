@@ -5,30 +5,33 @@
     top: 30%;
     left: 50%;
     transform: translate(-50%,-50%) scale(0);
-    background-color: whitesmoke;
+    background-color: var(--pre-color);
     z-index: 4;
     text-align: center;
     transition: transform .3s;
+    border-radius: 5px;
 }
 .open-modal{
     transform: translate(-50%,-50%) scale(1);
 }
 .modal-header{
-    height: 40%;
+    height: 30%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-2);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: var(--secondary);
 }
 
 .circle{
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 6px solid white;
+    border: 5px solid white;
     border-radius: 50%;
 }
 .modal-header-icon{
@@ -40,23 +43,76 @@
 }
 .modal-body h2{
     text-transform: capitalize;
+    color: var(--secondary);
 }
 .modal-body p{
-    color: var(--color-1);
+    margin-top: 20px;
+    color: var(--primary);
 }
 .modal-body button{
     display: inline;
     width: 190px;
     height: 35px;
-    margin-top: 20px;
+    margin-top: 25px;
     border: none;
     color: white;
     font-size: 20px;
-    background-color: var(--color-2);
+    background-color: var(--secondary);
     cursor: pointer;
 }
 .modal-body button:hover{
     opacity: .9;
+}
+
+@media screen and (max-width:600px) {
+    .modal-container{
+        z-index: 9;
+        top: 50%;
+        width: 85%;
+        min-height: 120px;
+    }
+    .modal-header{
+        height: 20%;
+        padding: 30px 0;
+    }
+    .circle{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid white;
+        border-radius: 50%;
+    }
+    .modal-header-icon{
+        font-size: 30px;
+        color: white;
+    }
+    .modal-body{
+        padding-top: 15px;
+    }
+    .modal-body h2{
+        text-transform: capitalize;
+    }
+    .modal-body p{
+        font-size: 15px;
+    }
+    .modal-body button{
+        display: inline;
+        width: 190px;
+        height: 35px;
+        margin-top: 25px;
+        border: none;
+        color: white;
+        font-size: 20px;
+        background-color: var(--secondary);
+        cursor: pointer;
+    }
+    .modal-body button:hover{
+        opacity: 1;
+    }
+    
+    
 }
 
 /* value box styling */

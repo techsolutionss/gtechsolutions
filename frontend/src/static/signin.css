@@ -42,6 +42,8 @@
     height: 35px;
     outline: none;
     padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .signin-form-btn{
     margin-top: 15px;
@@ -55,6 +57,7 @@
     color: white;
     margin-top: 25px;
     cursor: pointer;
+    border-radius: 5px;
 }
 .signin-form-btn:hover{
     background: var(--secondary);

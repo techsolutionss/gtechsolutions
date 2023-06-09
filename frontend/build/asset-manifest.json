@@ -1,17 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.53744968.css",
-    "main.js": "/static/js/main.db240c6d.js",
+    "main.css": "/static/css/main.27129a37.css",
+    "main.js": "/static/js/main.ae754863.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/image-2.jpg": "/static/media/image-2.a58c62ee41f0a454534d.jpg",
+    "static/media/instagram.png": "/static/media/instagram.40755e0b3091e33847b1.png",
+    "static/media/blue-shirt-man.jpg": "/static/media/blue-shirt-man.911df5df57e2b2339528.jpg",
+    "static/media/image-3.jpg": "/static/media/image-3.4009ebd9561f76622b96.jpg",
+    "static/media/image-1.jpg": "/static/media/image-1.b8254814d0a2e3fa5f88.jpg",
+    "static/media/image-6.jpg": "/static/media/image-6.8a91ab10a3bf92127bf7.jpg",
+    "static/media/image-7.jpg": "/static/media/image-7.7da6b5b374949fe7f30e.jpg",
+    "static/media/image-4.jpg": "/static/media/image-4.72010240bbba384a4775.jpg",
     "static/media/gtech-logo.jpg": "/static/media/gtech-logo.0fd8da6d414fdeb61b66.jpg",
+    "static/media/IMG-20230304-WA0024.jpg": "/static/media/IMG-20230304-WA0024.e7fdc612e1483c9f0e2b.jpg",
+    "static/media/image-5.jpg": "/static/media/image-5.5490533521b4938343f5.jpg",
     "static/media/IMG-20230304-WA0022.jpg": "/static/media/IMG-20230304-WA0022.2bd23ae5506a47f7e130.jpg",
+    "static/media/image-8.jpg": "/static/media/image-8.ddd636fe6da7d05ec807.jpg",
     "index.html": "/index.html",
-    "main.53744968.css.map": "/static/css/main.53744968.css.map",
-    "main.db240c6d.js.map": "/static/js/main.db240c6d.js.map",
+    "main.27129a37.css.map": "/static/css/main.27129a37.css.map",
+    "main.ae754863.js.map": "/static/js/main.ae754863.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.53744968.css",
-    "static/js/main.db240c6d.js"
+    "static/css/main.27129a37.css",
+    "static/js/main.ae754863.js"
   ]
 }

@@ -77,7 +77,7 @@
     }  
     .service-box-container{
         width: 80%;
-        height: 170px;
+        min-height: 180px;
     }   
     .service-box-container:hover{
         transform: scale(1.0);
@@ -93,9 +93,11 @@
         font-size: 22px;
         font-weight: 370;
         font-family: var(--headers-font);
+        padding: 10px 0;
     }    
     .service-box-container p{
         font-size: 14px;
+        margin-top: 40px;
     
     }
 }

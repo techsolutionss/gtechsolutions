@@ -330,7 +330,7 @@
         color: var(--primary);
     }
     .comment-container-header h4 p{
-        margin-left: 20px;
+        margin-left: 15px;
     }
     .comment-container-footer p{
         color: var(--primary);
